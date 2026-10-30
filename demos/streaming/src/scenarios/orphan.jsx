@@ -17,12 +17,12 @@ const nested = (outerMs, innerMs, tag) => (
 export const orphan = () => [
 	{
 		id: 'orphan-outer-first', group: 'orphan', title: 'Orphan: outer resolves first, inner still pending',
-		expected: 'BUG if "inner" never appears (content lost): inner template is emitted with no fallback markers to patch. Should show outer + inner once.',
+		expected: 'Open with ?hydrate=off (client hydration masks it). BUG: only "outer" is shown and "inner" is lost, because its patch is emitted with no fallback markers to target. Should show inner + outer.',
 		render: () => nested(300, 1200, 'oof'),
 	},
 	{
 		id: 'orphan-inner-first', group: 'orphan', title: 'Orphan: inner resolves first, outer still pending',
-		expected: 'BUG if a leftover hidden <template for> / orphaned island remains in the DOM. Should show outer + inner once with no stray templates.',
+		expected: 'Not user-visible: final DOM is correct. The stream still emits an inner patch with no markers (orphan) before the outer patch, which inlines the inner content. See view-source.',
 		render: () => nested(1200, 300, 'oif'),
 	},
 ];
