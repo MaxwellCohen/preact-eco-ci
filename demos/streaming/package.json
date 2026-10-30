@@ -12,7 +12,7 @@
     "preact-render-to-string": "*"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0",
-    "wrangler": "^4.0.0"
+    "esbuild": "latest",
+    "wrangler": "latest"
   }
 }

@@ -4,11 +4,12 @@ import { edge } from './scenarios/edge.jsx';
 import { races } from './scenarios/races.jsx';
 import { special } from './scenarios/special.jsx';
 import { more } from './scenarios/more.jsx';
+import { orphan } from './scenarios/orphan.jsx';
 
-export const GROUPS = ['basics', 'edge-cases', 'races', 'special', 'more'];
+export const GROUPS = ['basics', 'edge-cases', 'races', 'special', 'more', 'orphan'];
 
 export function allScenarios(delays) {
-	return [...basics(delays), ...edge(), ...races(), ...special(), ...more()];
+	return [...basics(delays), ...edge(), ...races(), ...special(), ...more(), ...orphan()];
 }
 
 export function App({ delays, only, skip, group, version }) {
