@@ -3,10 +3,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esbuild src/worker.jsx --bundle --format=esm --platform=neutral --conditions=workerd,worker,import --main-fields=module,main --jsx=automatic --jsx-import-source=preact --outfile=dist/worker.js",
+    "build": "esbuild src/worker.jsx --bundle --format=esm --platform=neutral --conditions=workerd,worker,import --main-fields=module,main --jsx=automatic --jsx-import-source=preact --outfile=dist/worker.js && esbuild src/client.jsx --bundle --format=iife --platform=browser --jsx=automatic --jsx-import-source=preact --minify --outfile=dist/client/client.js",
     "dev": "npm run build && wrangler dev",
     "deploy": "wrangler deploy"
   },
-  "dependencies": { "preact": "*", "preact-render-to-string": "*" },
-  "devDependencies": { "esbuild": "^0.25.0", "wrangler": "^4.0.0" }
+  "dependencies": {
+    "preact": "*",
+    "preact-render-to-string": "*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "wrangler": "^4.0.0"
+  }
 }
