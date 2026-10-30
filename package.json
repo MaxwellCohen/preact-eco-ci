@@ -1,0 +1,9 @@
+{
+  "name": "preact-eco-ci",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-variant.mjs",
+    "dev": "node scripts/build-variant.mjs"
+  }
+}
