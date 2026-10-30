@@ -29,6 +29,11 @@ for (const [key, { repo, ref }] of Object.entries(v)) {
   const pnpm = existsSync(join(dir, 'pnpm-lock.yaml'));
   run(pnpm ? 'pnpm' : 'npm', pnpm ? ['install', '--frozen-lockfile', '--ignore-scripts'] : ['install', '--ignore-scripts', '--no-audit', '--no-fund'], dir);
   run(pnpm ? 'pnpm' : 'npm', ['run', 'build'], dir);
+  // some forks run `prepare` (husky/playwright) on pack even with --ignore-scripts; we already built above
+  const cp = join(dir, 'package.json');
+  const cpkg = JSON.parse(readFileSync(cp, 'utf8'));
+  for (const h of ['prepare', 'prepack', 'prepublishOnly']) delete cpkg.scripts?.[h];
+  writeFileSync(cp, JSON.stringify(cpkg, null, 2));
   run('npm', ['pack', '--ignore-scripts', '--pack-destination', src], dir, { npm_config_ignore_scripts: 'true' });
   const tgz = readdirSync(src).find(f => f.endsWith('.tgz') && !Object.values(tarballs).some(t => t.file === f));
   tarballs[key] = { file: tgz, repo, ref, sha };
