@@ -14,7 +14,7 @@ const root = resolve('.');
 const out = join(root, '.build', name);
 const src = join(root, '.cache', name);
 const env = { ...process.env, PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1' };
-const run = (cmd, args, cwd) => execFileSync(cmd, args, { cwd, stdio: 'inherit', env });
+const run = (cmd, args, cwd, extra = {}) => execFileSync(cmd, args, { cwd, stdio: 'inherit', env: { ...env, ...extra } });
 
 rmSync(out, { recursive: true, force: true });
 rmSync(src, { recursive: true, force: true });
@@ -29,7 +29,7 @@ for (const [key, { repo, ref }] of Object.entries(v)) {
   const pnpm = existsSync(join(dir, 'pnpm-lock.yaml'));
   run(pnpm ? 'pnpm' : 'npm', pnpm ? ['install', '--frozen-lockfile', '--ignore-scripts'] : ['install', '--ignore-scripts', '--no-audit', '--no-fund'], dir);
   run(pnpm ? 'pnpm' : 'npm', ['run', 'build'], dir);
-  run('npm', ['pack', '--ignore-scripts', '--pack-destination', src], dir);
+  run('npm', ['pack', '--ignore-scripts', '--pack-destination', src], dir, { npm_config_ignore_scripts: 'true' });
   const tgz = readdirSync(src).find(f => f.endsWith('.tgz') && !Object.values(tarballs).some(t => t.file === f));
   tarballs[key] = { file: tgz, repo, ref, sha };
 }
