@@ -45,11 +45,13 @@ export default {
 		let only = q.get('only') ? q.get('only').split(',') : undefined;
 		const m = url.pathname.match(/^\/s\/([\w-]+)$/);
 		if (m) only = [m[1]];
+		const skip = q.get('skip') ? q.get('skip').split(',') : undefined;
 		const group = q.get('group') || undefined;
-		const props = { delays, only, group, version };
+		const autofocus = q.get('autofocus') === '1' || (only && only.length === 1 && only[0] === 'autofocus');
+		const props = { delays, only, skip, group, version, autofocus };
 
 		const stream = renderToReadableStream(
-			<Ctx.Provider value={{ cache: new Map(), scale }}><App {...props} /></Ctx.Provider>
+			<Ctx.Provider value={{ cache: new Map(), scale, autofocus }}><App {...props} /></Ctx.Provider>
 		);
 		// Stream: head chunk → app (suspense-streamed) → tail chunk.
 		const enc = new TextEncoder();

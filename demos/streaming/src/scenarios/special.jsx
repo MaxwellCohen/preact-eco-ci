@@ -1,6 +1,6 @@
 import { Component as PC } from 'preact';
 import { Suspense } from 'preact/compat';
-import { Fallback, Late } from '../lib.jsx';
+import { AutoFocusInput, Fallback, Late } from '../lib.jsx';
 
 function Boom() {
 	throw new Error('boom');
@@ -67,9 +67,9 @@ export const special = () => [
 	},
 	{
 		id: 'autofocus', group: 'special', title: 'Autofocus in a patch',
-		expected: 'Records whether the patched input is focused (browser-dependent); must not throw.',
+		expected: 'Records whether the patched input is focused (browser-dependent); must not throw. Disabled on the combined page: open /s/autofocus or add ?autofocus=1.',
 		render: () => (
-			<Suspense fallback={fb()}><Late id="autofocus"><input data-testid="af" autofocus /></Late></Suspense>
+			<Suspense fallback={fb()}><Late id="autofocus"><AutoFocusInput /></Late></Suspense>
 		),
 	},
 	{

@@ -11,10 +11,11 @@ export function allScenarios(delays) {
 	return [...basics(delays), ...edge(), ...races(), ...special(), ...more()];
 }
 
-export function App({ delays, only, group, version }) {
+export function App({ delays, only, skip, group, version }) {
 	let list = allScenarios(delays);
 	if (group) list = list.filter(s => s.group === group);
 	if (only) list = list.filter(s => only.includes(s.id));
+	if (skip) list = list.filter(s => !skip.includes(s.id));
 	return (
 		<div id="app">
 			<h1>Preact streaming: {version.variant}</h1>
@@ -29,7 +30,12 @@ export function App({ delays, only, group, version }) {
 				<span> | hydrate:</span>
 				<a href="?hydrate=late">late</a> <a href="?hydrate=early">early</a> <a href="?hydrate=off">off</a>
 				<span> | </span><a href="/index.json">index.json</a>
+				<span> | </span><a href="?autofocus=1">autofocus on</a>
 			</nav>
+			<p class="meta">
+				URL params: <code>?only=a,b</code> · <code>?skip=a,b</code> · <code>?group=races</code> · <code>?delays=300,900</code> ·{' '}
+				<code>?scale=2</code> · <code>?hydrate=late|early|off</code> · <code>?autofocus=1</code> · <code>/s/&lt;id&gt;</code>
+			</p>
 			<ol class="toc">
 				{list.map(s => <li><a href={`#${s.id}`}>{s.title}</a></li>)}
 			</ol>

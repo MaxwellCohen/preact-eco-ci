@@ -4,7 +4,7 @@ import { useContext } from 'preact/hooks';
 // Per-request state. `cache` makes a boundary's promise stable across re-renders;
 // `scale` multiplies every delay (?scale=2). On the client the document is already
 // resolved, so useDelay is a no-op (same contract as the pract-dpu playground).
-export const Ctx = createContext({ cache: new Map(), scale: 1 });
+export const Ctx = createContext({ cache: new Map(), scale: 1, autofocus: false });
 
 export function useDelay(key, ms) {
 	const { cache, scale } = useContext(Ctx);
@@ -21,6 +21,12 @@ export function useDelay(key, ms) {
 export function Late({ id, ms = 500, children }) {
 	useDelay(id, ms);
 	return <>{children}</>;
+}
+
+/** autofocus steals focus + scrolls the page, so it is opt-in on combined pages (?autofocus=1 or /s/autofocus). */
+export function AutoFocusInput() {
+	const { autofocus } = useContext(Ctx);
+	return <input data-testid="af" autofocus={autofocus} placeholder={autofocus ? 'autofocus' : 'autofocus disabled — add ?autofocus=1'} />;
 }
 
 export const Fallback = ({ text = 'Loading…' }) => <p data-testid="fallback">{text}</p>;
