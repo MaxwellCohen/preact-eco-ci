@@ -13,7 +13,8 @@ if (!v) throw new Error(`unknown variant "${name}". Known: ${Object.keys(version
 const root = resolve('.');
 const out = join(root, '.build', name);
 const src = join(root, '.cache', name);
-const run = (cmd, args, cwd) => execFileSync(cmd, args, { cwd, stdio: 'inherit' });
+const env = { ...process.env, PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1' };
+const run = (cmd, args, cwd) => execFileSync(cmd, args, { cwd, stdio: 'inherit', env });
 
 rmSync(out, { recursive: true, force: true });
 rmSync(src, { recursive: true, force: true });
