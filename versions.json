@@ -1,10 +1,32 @@
 {
   "baseline": {
-    "preact": { "repo": "preactjs/preact", "ref": "main" },
-    "rts": { "repo": "preactjs/preact-render-to-string", "ref": "main" }
+    "preact": {
+      "repo": "preactjs/preact",
+      "ref": "main"
+    },
+    "rts": {
+      "repo": "preactjs/preact-render-to-string",
+      "ref": "main"
+    }
   },
   "dpu-end-stamp": {
-    "preact": { "repo": "MaxwellCohen/preact", "ref": "main" },
-    "rts": { "repo": "MaxwellCohen/preact-render-to-string", "ref": "dpu-end-stamp" }
+    "preact": {
+      "repo": "MaxwellCohen/preact",
+      "ref": "main"
+    },
+    "rts": {
+      "repo": "MaxwellCohen/preact-render-to-string",
+      "ref": "dpu-end-stamp"
+    }
+  },
+  "dpu-support-react-style": {
+    "preact": {
+      "repo": "MaxwellCohen/preact",
+      "ref": "main"
+    },
+    "rts": {
+      "repo": "MaxwellCohen/preact-render-to-string",
+      "ref": "dpu-support-react-style"
+    }
   }
 }

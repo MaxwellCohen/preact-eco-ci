@@ -26,7 +26,7 @@ export function App({ delays, only, skip, group, version }) {
 				{list.length} scenarios
 			</p>
 			<nav>
-				<a href="/">all</a>
+				<a href="/">all</a> <a href="/dpu">dpu test page</a> <a href="/dpu?csp=strict">dpu + strict CSP</a>
 				{GROUPS.map(g => <a href={`/?group=${g}`}>{g}</a>)}
 				<span> | hydrate:</span>
 				<a href="?hydrate=late">late</a> <a href="?hydrate=early">early</a> <a href="?hydrate=off">off</a>
