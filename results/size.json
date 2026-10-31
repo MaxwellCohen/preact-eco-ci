@@ -1,0 +1,188 @@
+{
+  "baseline": {
+    "zero": {
+      "boundaries": 0,
+      "raw": 17472,
+      "gzip": 5273,
+      "brotli": 4415,
+      "scriptBytes": 775,
+      "templates": 0,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "one": {
+      "boundaries": 1,
+      "raw": 18794,
+      "gzip": 5863,
+      "brotli": 4948,
+      "scriptBytes": 1946,
+      "templates": 0,
+      "islands": 1,
+      "rcCalls": 0
+    },
+    "popcorn": {
+      "boundaries": 16,
+      "raw": 21211,
+      "gzip": 6142,
+      "brotli": 5146,
+      "scriptBytes": 1943,
+      "templates": 0,
+      "islands": 16,
+      "rcCalls": 0
+    },
+    "many": {
+      "boundaries": 60,
+      "raw": 26525,
+      "gzip": 6851,
+      "brotli": 5399,
+      "scriptBytes": 1948,
+      "templates": 0,
+      "islands": 60,
+      "rcCalls": 0
+    },
+    "grid": {
+      "boundaries": 100,
+      "raw": 30199,
+      "gzip": 7369,
+      "brotli": 5685,
+      "scriptBytes": 1941,
+      "templates": 0,
+      "islands": 85,
+      "rcCalls": 0
+    },
+    "big": {
+      "boundaries": 1,
+      "raw": 34742,
+      "gzip": 9307,
+      "brotli": 6005,
+      "scriptBytes": 1945,
+      "templates": 0,
+      "islands": 1,
+      "rcCalls": 0
+    }
+  },
+  "dpu-end-stamp": {
+    "zero": {
+      "boundaries": 0,
+      "raw": 17526,
+      "gzip": 5303,
+      "brotli": 4449,
+      "scriptBytes": 802,
+      "templates": 0,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "one": {
+      "boundaries": 1,
+      "raw": 18776,
+      "gzip": 5954,
+      "brotli": 5070,
+      "scriptBytes": 1904,
+      "templates": 1,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "popcorn": {
+      "boundaries": 16,
+      "raw": 21418,
+      "gzip": 6341,
+      "brotli": 5295,
+      "scriptBytes": 1901,
+      "templates": 16,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "many": {
+      "boundaries": 60,
+      "raw": 27392,
+      "gzip": 7340,
+      "brotli": 5579,
+      "scriptBytes": 1906,
+      "templates": 60,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "grid": {
+      "boundaries": 100,
+      "raw": 31455,
+      "gzip": 8031,
+      "brotli": 5940,
+      "scriptBytes": 1899,
+      "templates": 85,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "big": {
+      "boundaries": 1,
+      "raw": 34726,
+      "gzip": 9398,
+      "brotli": 6102,
+      "scriptBytes": 1903,
+      "templates": 1,
+      "islands": 0,
+      "rcCalls": 0
+    }
+  },
+  "dpu-support-react-style": {
+    "zero": {
+      "boundaries": 0,
+      "raw": 17576,
+      "gzip": 5304,
+      "brotli": 4443,
+      "scriptBytes": 822,
+      "templates": 0,
+      "islands": 0,
+      "rcCalls": 0
+    },
+    "one": {
+      "boundaries": 1,
+      "raw": 18461,
+      "gzip": 5769,
+      "brotli": 4886,
+      "scriptBytes": 1572,
+      "templates": 1,
+      "islands": 0,
+      "rcCalls": 1
+    },
+    "popcorn": {
+      "boundaries": 16,
+      "raw": 21328,
+      "gzip": 6155,
+      "brotli": 5138,
+      "scriptBytes": 1989,
+      "templates": 16,
+      "islands": 0,
+      "rcCalls": 16
+    },
+    "many": {
+      "boundaries": 60,
+      "raw": 27962,
+      "gzip": 7152,
+      "brotli": 5500,
+      "scriptBytes": 3226,
+      "templates": 60,
+      "islands": 0,
+      "rcCalls": 60
+    },
+    "grid": {
+      "boundaries": 100,
+      "raw": 32400,
+      "gzip": 7826,
+      "brotli": 5801,
+      "scriptBytes": 3926,
+      "templates": 85,
+      "islands": 0,
+      "rcCalls": 85
+    },
+    "big": {
+      "boundaries": 1,
+      "raw": 34411,
+      "gzip": 9208,
+      "brotli": 5956,
+      "scriptBytes": 1572,
+      "templates": 1,
+      "islands": 0,
+      "rcCalls": 1
+    }
+  }
+}

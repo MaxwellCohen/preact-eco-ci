@@ -1,0 +1,963 @@
+{
+  "browser": "chromium",
+  "runs": 5,
+  "variants": {
+    "baseline": {
+      "popcorn": [
+        {
+          "ttfb": 231.19999992847443,
+          "fcp": 356,
+          "lcp": 356,
+          "longTask": 0,
+          "maxGap": 27.399999976158142,
+          "hydrated": 2625.2999999523163,
+          "lagMedian": -2.899999976158142,
+          "lagP95": 10.899999976158142,
+          "lagMax": 10.899999976158142,
+          "missing": 0,
+          "lastVisible": 2490.5,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 237.39999997615814,
+          "fcp": 268,
+          "lcp": 268,
+          "longTask": 0,
+          "maxGap": 8.800000071525574,
+          "hydrated": 2669.7999999523163,
+          "lagMedian": 15.299999952316284,
+          "lagP95": 47.700000047683716,
+          "lagMax": 47.700000047683716,
+          "missing": 0,
+          "lastVisible": 2540.600000023842,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 309.89999997615814,
+          "fcp": 352,
+          "lcp": 352,
+          "longTask": 0,
+          "maxGap": 8.5,
+          "hydrated": 2765.1999999284744,
+          "lagMedian": -16,
+          "lagP95": 91,
+          "lagMax": 91,
+          "missing": 0,
+          "lastVisible": 2553.899999976158,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 180,
+          "fcp": 220,
+          "lcp": 220,
+          "longTask": 0,
+          "maxGap": 8.200000047683716,
+          "hydrated": 2545.3000000715256,
+          "lagMedian": -24.399999976158142,
+          "lagP95": 8.700000047683716,
+          "lagMax": 8.700000047683716,
+          "missing": 0,
+          "lastVisible": 2419,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 147,
+          "fcp": 176,
+          "lcp": 176,
+          "longTask": 0,
+          "maxGap": 8.5,
+          "hydrated": 2545.600000023842,
+          "lagMedian": 0.9000000953674316,
+          "lagP95": 9,
+          "lagMax": 9,
+          "missing": 0,
+          "lastVisible": 2405,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 126.89999997615814,
+          "fcp": 160,
+          "lcp": 160,
+          "longTask": 0,
+          "maxGap": 8.200000047683716,
+          "hydrated": 1756,
+          "lagMedian": 5.400000095367432,
+          "lagP95": 12.100000023841858,
+          "lagMax": 12.600000023841858,
+          "missing": 0,
+          "lastVisible": 1655.7000000476837,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 599.2999999523163,
+          "fcp": 632,
+          "lcp": 632,
+          "longTask": 0,
+          "maxGap": 8.299999952316284,
+          "hydrated": 2448.1999999284744,
+          "lagMedian": 41.39999997615814,
+          "lagP95": 98.70000004768372,
+          "lagMax": 113.5,
+          "missing": 0,
+          "lastVisible": 2158,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 476.60000002384186,
+          "fcp": 508,
+          "lcp": 508,
+          "longTask": 0,
+          "maxGap": 8.600000023841858,
+          "hydrated": 2146.7000000476837,
+          "lagMedian": -23,
+          "lagP95": 0.10000002384185791,
+          "lagMax": 26.5,
+          "missing": 0,
+          "lastVisible": 1950.2999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 144.30000007152557,
+          "fcp": 172,
+          "lcp": 172,
+          "longTask": 0,
+          "maxGap": 9.199999928474426,
+          "hydrated": 1737.8000000715256,
+          "lagMedian": -1.8000000715255737,
+          "lagP95": 9.600000023841858,
+          "lagMax": 14.299999952316284,
+          "missing": 0,
+          "lastVisible": 1662.6000000238419,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 144.29999995231628,
+          "fcp": 172,
+          "lcp": 172,
+          "longTask": 0,
+          "maxGap": 9.300000071525574,
+          "hydrated": 1787.7000000476837,
+          "lagMedian": 1.9000000953674316,
+          "lagP95": 7.300000071525574,
+          "lagMax": 8.800000071525574,
+          "missing": 0,
+          "lastVisible": 1667,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 146.69999992847443,
+          "fcp": 176,
+          "lcp": 176,
+          "longTask": 0,
+          "maxGap": 8.399999976158142,
+          "hydrated": 858.5,
+          "lagMedian": 7.800000071525574,
+          "lagP95": 13,
+          "lagMax": 23.100000023841858,
+          "missing": 0,
+          "lastVisible": 769.7999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 746.6000000238419,
+          "fcp": 784,
+          "lcp": 784,
+          "longTask": 0,
+          "maxGap": 8.699999928474426,
+          "hydrated": 1718.2000000476837,
+          "lagMedian": -5.399999976158142,
+          "lagP95": 118.89999997615814,
+          "lagMax": 119.5,
+          "missing": 0,
+          "lastVisible": 1443.3999999761581,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 450.7999999523163,
+          "fcp": 480,
+          "lcp": 480,
+          "longTask": 0,
+          "maxGap": 9.300000071525574,
+          "hydrated": 1217.2000000476837,
+          "lagMedian": -32.799999952316284,
+          "lagP95": 7.800000071525574,
+          "lagMax": 7.800000071525574,
+          "missing": 0,
+          "lastVisible": 1056.8999999761581,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 138.29999995231628,
+          "fcp": 176,
+          "lcp": 176,
+          "longTask": 0,
+          "maxGap": 8.899999976158142,
+          "hydrated": 829.5,
+          "lagMedian": 6,
+          "lagP95": 35.200000047683716,
+          "lagMax": 35.700000047683716,
+          "missing": 0,
+          "lastVisible": 744.6999999284744,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 131.5,
+          "fcp": 164,
+          "lcp": 164,
+          "longTask": 0,
+          "maxGap": 8.200000047683716,
+          "hydrated": 797.1000000238419,
+          "lagMedian": 3.200000047683716,
+          "lagP95": 8.200000047683716,
+          "lagMax": 8.200000047683716,
+          "missing": 0,
+          "lastVisible": 737.7999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "interactive": {
+        "late": [
+          {
+            "visible": 549.2999999523163,
+            "live": 679.2000000476837,
+            "gap": 129.90000009536743,
+            "hydrated": 671
+          },
+          {
+            "visible": 604.2000000476837,
+            "live": 736.5,
+            "gap": 132.29999995231628,
+            "hydrated": 723
+          },
+          {
+            "visible": 991.2999999523163,
+            "live": 1272.7999999523163,
+            "gap": 281.5,
+            "hydrated": 1260.2999999523163
+          },
+          {
+            "visible": 533.6999999284744,
+            "live": 631.3999999761581,
+            "gap": 97.70000004768372,
+            "hydrated": 617.6999999284744
+          },
+          {
+            "visible": 555.1999999284744,
+            "live": 674.2999999523163,
+            "gap": 119.10000002384186,
+            "hydrated": 660.1999999284744
+          }
+        ],
+        "early": [
+          {
+            "visible": 219.29999995231628,
+            "live": 235.60000002384186,
+            "gap": 16.300000071525574,
+            "hydrated": 219.29999995231628
+          },
+          {
+            "visible": 305.5,
+            "live": 317.10000002384186,
+            "gap": 11.600000023841858,
+            "hydrated": 305.5
+          },
+          {
+            "visible": 213.29999995231628,
+            "live": 223.60000002384186,
+            "gap": 10.300000071525574,
+            "hydrated": 213.20000004768372
+          },
+          {
+            "visible": 257.10000002384186,
+            "live": 265.5,
+            "gap": 8.399999976158142,
+            "hydrated": 257.10000002384186
+          },
+          {
+            "visible": 224.29999995231628,
+            "live": 235.29999995231628,
+            "gap": 11,
+            "hydrated": 224.29999995231628
+          }
+        ]
+      },
+      "csp": {
+        "leftoverTpl": 0,
+        "leftoverFb": 16,
+        "errors": 0
+      }
+    },
+    "dpu-end-stamp": {
+      "popcorn": [
+        {
+          "ttfb": 183.09999990463257,
+          "fcp": 208,
+          "lcp": 208,
+          "longTask": 0,
+          "maxGap": 9.200000047683716,
+          "hydrated": 2559.399999976158,
+          "lagMedian": -7,
+          "lagP95": -0.3999999761581421,
+          "lagMax": -0.3999999761581421,
+          "missing": 0,
+          "lastVisible": 2435,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 140.19999992847443,
+          "fcp": 164,
+          "lcp": 164,
+          "longTask": 0,
+          "maxGap": 9.400000095367432,
+          "hydrated": 2461.5,
+          "lagMedian": -1.2999999523162842,
+          "lagP95": 12.800000071525574,
+          "lagMax": 12.800000071525574,
+          "missing": 0,
+          "lastVisible": 2394.5999999046326,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 94.60000002384186,
+          "fcp": 120,
+          "lcp": 120,
+          "longTask": 0,
+          "maxGap": 9.400000095367432,
+          "hydrated": 2474.5,
+          "lagMedian": -0.20000004768371582,
+          "lagP95": 40.10000002384186,
+          "lagMax": 40.10000002384186,
+          "missing": 0,
+          "lastVisible": 2360.100000023842,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 185,
+          "fcp": 212,
+          "lcp": 212,
+          "longTask": 0,
+          "maxGap": 8.399999976158142,
+          "hydrated": 2552.399999976158,
+          "lagMedian": -7.5,
+          "lagP95": 0.5,
+          "lagMax": 0.5,
+          "missing": 0,
+          "lastVisible": 2444.899999976158,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 97.89999997615814,
+          "fcp": 124,
+          "lcp": 124,
+          "longTask": 0,
+          "maxGap": 9.200000047683716,
+          "hydrated": 2427.600000023842,
+          "lagMedian": 1.2000000476837158,
+          "lagP95": 10.100000023841858,
+          "lagMax": 10.100000023841858,
+          "missing": 0,
+          "lastVisible": 2358.100000023842,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 158.19999992847443,
+          "fcp": 184,
+          "lcp": 184,
+          "longTask": 0,
+          "maxGap": 9.100000023841858,
+          "hydrated": 1770.0999999046326,
+          "lagMedian": 0.10000002384185791,
+          "lagP95": 5.700000047683716,
+          "lagMax": 38.60000002384186,
+          "missing": 0,
+          "lastVisible": 1677.5,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 127.60000002384186,
+          "fcp": 152,
+          "lcp": 152,
+          "longTask": 0,
+          "maxGap": 9.5,
+          "hydrated": 1766.1000000238419,
+          "lagMedian": -1.8000000715255737,
+          "lagP95": 16.399999976158142,
+          "lagMax": 21.799999952316284,
+          "missing": 0,
+          "lastVisible": 1643.2999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 115.39999997615814,
+          "fcp": 144,
+          "lcp": 144,
+          "longTask": 0,
+          "maxGap": 8.699999928474426,
+          "hydrated": 1718.8999999761581,
+          "lagMedian": 0.5,
+          "lagP95": 7.5,
+          "lagMax": 10.600000023841858,
+          "missing": 0,
+          "lastVisible": 1639.2999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 147.40000009536743,
+          "fcp": 172,
+          "lcp": 172,
+          "longTask": 0,
+          "maxGap": 8.600000023841858,
+          "hydrated": 1774.8000000715256,
+          "lagMedian": -3.8000000715255737,
+          "lagP95": 5.199999928474426,
+          "lagMax": 5.599999904632568,
+          "missing": 0,
+          "lastVisible": 1671.3000000715256,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 91.30000007152557,
+          "fcp": 116,
+          "lcp": 116,
+          "longTask": 0,
+          "maxGap": 9.200000047683716,
+          "hydrated": 1713.6000000238419,
+          "lagMedian": -0.30000007152557373,
+          "lagP95": 6.100000023841858,
+          "lagMax": 7.100000023841858,
+          "missing": 0,
+          "lastVisible": 1612.9000000953674,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 166.30000007152557,
+          "fcp": 192,
+          "lcp": 192,
+          "longTask": 0,
+          "maxGap": 9,
+          "hydrated": 882.6000000238419,
+          "lagMedian": 2.299999952316284,
+          "lagP95": 34.799999952316284,
+          "lagMax": 34.799999952316284,
+          "missing": 0,
+          "lastVisible": 768.1000000238419,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 152.19999992847443,
+          "fcp": 176,
+          "lcp": 176,
+          "longTask": 0,
+          "maxGap": 8.699999928474426,
+          "hydrated": 866.0999999046326,
+          "lagMedian": -1,
+          "lagP95": 5,
+          "lagMax": 5,
+          "missing": 0,
+          "lastVisible": 751.5999999046326,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 104.20000004768372,
+          "fcp": 128,
+          "lcp": 128,
+          "longTask": 0,
+          "maxGap": 9.100000023841858,
+          "hydrated": 818.5,
+          "lagMedian": 0,
+          "lagP95": 5.700000047683716,
+          "lagMax": 5.700000047683716,
+          "missing": 0,
+          "lastVisible": 707.3000000715256,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 156.10000002384186,
+          "fcp": 180,
+          "lcp": 180,
+          "longTask": 0,
+          "maxGap": 9,
+          "hydrated": 853.1000000238419,
+          "lagMedian": -19,
+          "lagP95": 4.799999952316284,
+          "lagMax": 4.799999952316284,
+          "missing": 0,
+          "lastVisible": 740.1999999284744,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 107,
+          "fcp": 136,
+          "lcp": 136,
+          "longTask": 0,
+          "maxGap": 8,
+          "hydrated": 833.6000000238419,
+          "lagMedian": 1.100000023841858,
+          "lagP95": 7.399999976158142,
+          "lagMax": 7.399999976158142,
+          "missing": 0,
+          "lastVisible": 712.8999999761581,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "interactive": {
+        "late": [
+          {
+            "visible": 594,
+            "live": 701.8999999761581,
+            "gap": 107.89999997615814,
+            "hydrated": 691.7999999523163
+          },
+          {
+            "visible": 517.6999999284744,
+            "live": 603.2999999523163,
+            "gap": 85.60000002384186,
+            "hydrated": 588.7999999523163
+          },
+          {
+            "visible": 533.5,
+            "live": 626.6000000238419,
+            "gap": 93.10000002384186,
+            "hydrated": 612.7000000476837
+          },
+          {
+            "visible": 565.2999999523163,
+            "live": 716.1000000238419,
+            "gap": 150.80000007152557,
+            "hydrated": 706.6000000238419
+          },
+          {
+            "visible": 541.2999999523163,
+            "live": 614.5999999046326,
+            "gap": 73.29999995231628,
+            "hydrated": 606.8999999761581
+          }
+        ],
+        "early": [
+          {
+            "visible": 251.89999997615814,
+            "live": 263.39999997615814,
+            "gap": 11.5,
+            "hydrated": 251.89999997615814
+          },
+          {
+            "visible": 207.39999997615814,
+            "live": 218.30000007152557,
+            "gap": 10.900000095367432,
+            "hydrated": 207.30000007152557
+          },
+          {
+            "visible": 237.10000002384186,
+            "live": 245.70000004768372,
+            "gap": 8.600000023841858,
+            "hydrated": 237.10000002384186
+          },
+          {
+            "visible": 185.40000009536743,
+            "live": 201.20000004768372,
+            "gap": 15.799999952316284,
+            "hydrated": 185.40000009536743
+          },
+          {
+            "visible": 219,
+            "live": 228.39999997615814,
+            "gap": 9.399999976158142,
+            "hydrated": 219
+          }
+        ]
+      },
+      "csp": {
+        "leftoverTpl": 0,
+        "leftoverFb": 0,
+        "errors": 0
+      }
+    },
+    "dpu-support-react-style": {
+      "popcorn": [
+        {
+          "ttfb": 201.69999992847443,
+          "fcp": 228,
+          "lcp": 228,
+          "longTask": 0,
+          "maxGap": 9,
+          "hydrated": 2599.7999999523163,
+          "lagMedian": -15.600000023841858,
+          "lagP95": 8.100000023841858,
+          "lagMax": 8.100000023841858,
+          "missing": 0,
+          "lastVisible": 2443.0999999046326,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 146.69999992847443,
+          "fcp": 172,
+          "lcp": 172,
+          "longTask": 0,
+          "maxGap": 8.800000071525574,
+          "hydrated": 2473.399999976158,
+          "lagMedian": -7.299999952316284,
+          "lagP95": 20.300000071525574,
+          "lagMax": 20.300000071525574,
+          "missing": 0,
+          "lastVisible": 2396.0999999046326,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 111.90000009536743,
+          "fcp": 152,
+          "lcp": 152,
+          "longTask": 0,
+          "maxGap": 9.5,
+          "hydrated": 2461.8000000715256,
+          "lagMedian": 7.099999904632568,
+          "lagP95": 85.59999990463257,
+          "lagMax": 85.59999990463257,
+          "missing": 0,
+          "lastVisible": 2377.600000023842,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 120.89999997615814,
+          "fcp": 156,
+          "lcp": 156,
+          "longTask": 0,
+          "maxGap": 9.899999976158142,
+          "hydrated": 2491.2000000476837,
+          "lagMedian": -1,
+          "lagP95": 10,
+          "lagMax": 10,
+          "missing": 0,
+          "lastVisible": 2390.899999976158,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 98.89999997615814,
+          "fcp": 128,
+          "lcp": 128,
+          "longTask": 0,
+          "maxGap": 8.700000047683716,
+          "hydrated": 2479.399999976158,
+          "lagMedian": -0.09999990463256836,
+          "lagP95": 34.300000071525574,
+          "lagMax": 34.300000071525574,
+          "missing": 0,
+          "lastVisible": 2365.399999976158,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 168.5,
+          "fcp": 204,
+          "lcp": 204,
+          "longTask": 0,
+          "maxGap": 9,
+          "hydrated": 1776.2999999523163,
+          "lagMedian": 2.399999976158142,
+          "lagP95": 7.899999976158142,
+          "lagMax": 35.10000002384186,
+          "missing": 0,
+          "lastVisible": 1697.3999999761581,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 99.60000002384186,
+          "fcp": 132,
+          "lcp": 132,
+          "longTask": 0,
+          "maxGap": 9,
+          "hydrated": 1685.2999999523163,
+          "lagMedian": 3.399999976158142,
+          "lagP95": 8.099999904632568,
+          "lagMax": 9.699999928474426,
+          "missing": 0,
+          "lastVisible": 1625.6000000238419,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 140.69999992847443,
+          "fcp": 164,
+          "lcp": 164,
+          "longTask": 0,
+          "maxGap": 9.199999928474426,
+          "hydrated": 1738.8999999761581,
+          "lagMedian": -1.6999999284744263,
+          "lagP95": 6.100000023841858,
+          "lagMax": 8.800000071525574,
+          "missing": 0,
+          "lastVisible": 1666.7999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 120.80000007152557,
+          "fcp": 164,
+          "lcp": 164,
+          "longTask": 0,
+          "maxGap": 10.200000047683716,
+          "hydrated": 1739.3000000715256,
+          "lagMedian": 1.1999999284744263,
+          "lagP95": 7.199999928474426,
+          "lagMax": 29.5,
+          "missing": 0,
+          "lastVisible": 1639.6000000238419,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 139.60000002384186,
+          "fcp": 160,
+          "lcp": 160,
+          "longTask": 0,
+          "maxGap": 9.400000095367432,
+          "hydrated": 1785.6000000238419,
+          "lagMedian": 1.100000023841858,
+          "lagP95": 7.200000047683716,
+          "lagMax": 15,
+          "missing": 0,
+          "lastVisible": 1661.8999999761581,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 171.79999995231628,
+          "fcp": 200,
+          "lcp": 200,
+          "longTask": 0,
+          "maxGap": 8.399999976158142,
+          "hydrated": 859.3999999761581,
+          "lagMedian": -3,
+          "lagP95": 6.600000023841858,
+          "lagMax": 6.600000023841858,
+          "missing": 0,
+          "lastVisible": 766,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 163.29999995231628,
+          "fcp": 192,
+          "lcp": 192,
+          "longTask": 0,
+          "maxGap": 8.600000023841858,
+          "hydrated": 831.5,
+          "lagMedian": -1.6999999284744263,
+          "lagP95": 5.600000023841858,
+          "lagMax": 5.700000047683716,
+          "missing": 0,
+          "lastVisible": 760.2000000476837,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 95.59999990463257,
+          "fcp": 124,
+          "lcp": 124,
+          "longTask": 0,
+          "maxGap": 8.899999976158142,
+          "hydrated": 797.5,
+          "lagMedian": 2.200000047683716,
+          "lagP95": 7.800000071525574,
+          "lagMax": 9.5,
+          "missing": 0,
+          "lastVisible": 702.8999999761581,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 152,
+          "fcp": 172,
+          "lcp": 172,
+          "longTask": 0,
+          "maxGap": 9.600000023841858,
+          "hydrated": 823.7999999523163,
+          "lagMedian": 1.100000023841858,
+          "lagP95": 13.899999976158142,
+          "lagMax": 14.5,
+          "missing": 0,
+          "lastVisible": 758.2999999523163,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 91.5,
+          "fcp": 120,
+          "lcp": 120,
+          "longTask": 0,
+          "maxGap": 9.200000047683716,
+          "hydrated": 798.3000000715256,
+          "lagMedian": 2,
+          "lagP95": 7.800000071525574,
+          "lagMax": 7.800000071525574,
+          "missing": 0,
+          "lastVisible": 699.1000000238419,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "interactive": {
+        "late": [
+          {
+            "visible": 543.8999999761581,
+            "live": 642.1000000238419,
+            "gap": 98.20000004768372,
+            "hydrated": 630.6000000238419
+          },
+          {
+            "visible": 510.2000000476837,
+            "live": 649.8000000715256,
+            "gap": 139.60000002384186,
+            "hydrated": 639.8000000715256
+          },
+          {
+            "visible": 522.2999999523163,
+            "live": 616.7999999523163,
+            "gap": 94.5,
+            "hydrated": 608.1000000238419
+          },
+          {
+            "visible": 530.8999999761581,
+            "live": 616.5,
+            "gap": 85.60000002384186,
+            "hydrated": 605.5
+          },
+          {
+            "visible": 545,
+            "live": 634.6000000238419,
+            "gap": 89.60000002384186,
+            "hydrated": 621.7999999523163
+          }
+        ],
+        "early": [
+          {
+            "visible": 330.89999997615814,
+            "live": 344,
+            "gap": 13.100000023841858,
+            "hydrated": 330.89999997615814
+          },
+          {
+            "visible": 234.69999992847443,
+            "live": 245,
+            "gap": 10.300000071525574,
+            "hydrated": 234.69999992847443
+          },
+          {
+            "visible": 199.40000009536743,
+            "live": 210,
+            "gap": 10.599999904632568,
+            "hydrated": 199.40000009536743
+          },
+          {
+            "visible": 391.7999999523163,
+            "live": 399.7999999523163,
+            "gap": 8,
+            "hydrated": 391.7999999523163
+          },
+          {
+            "visible": 170.70000004768372,
+            "live": 183.70000004768372,
+            "gap": 13,
+            "hydrated": 170.70000004768372
+          }
+        ]
+      },
+      "csp": {
+        "leftoverTpl": 0,
+        "leftoverFb": 0,
+        "errors": 0
+      }
+    }
+  }
+}
