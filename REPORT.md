@@ -31,8 +31,8 @@ so differences come from the `preact-render-to-string` change.
 | Last-resolving boundary shown when hydration starts right after the stream (Firefox, WebKit) | ok | **lost in every run** (cell 8 of 16; cell 97 of 100) | ok | ok |
 | Patch lag in Firefox (median over 16/60/100 boundaries) | 21–34 ms | 13–134 ms (includes the lost boundary) | 9–14 ms | −7…4 ms |
 | Patch lag in Chromium / WebKit | ≈0–10 ms | ≈0–10 ms (WebKit: lost boundary) | ≈0–5 ms | ≈0–11 ms |
-| Fixed overhead, first boundary (raw) | 1322 B | 1278 B | 1390 B | **885 B** |
-| Per boundary, raw / gzip (est.) | 107.0 / 14.6 B | 107.9 / 17.4 B | 120.2 / 20.4 B | 131.8 / 19.9 B |
+| Fixed overhead, first boundary (raw) | 1319 B | 1274 B | 1385 B | **880 B** |
+| Per boundary, raw / gzip (est.) | 106.8 / 14.6 B | 107.6 / 17.3 B | 119.1 / 20.0 B | 131.5 / 19.7 B |
 | Strict CSP, Chromium | fallbacks stay | works (native) | works (native) | works (native) |
 | Strict CSP, Firefox / WebKit | fallbacks stay | 112 templates unapplied | 112 unapplied | 112 unapplied |
 | Page errors / main-thread stalls >50 ms | none | none (except the hang above) | none | none |
@@ -53,6 +53,26 @@ so differences come from the `preact-render-to-string` change.
    but the largest per-boundary raw cost (extra `<script>` per chunk).
 5. **Strict CSP is unsolved by all of them** in browsers without native DPU (Firefox, WebKit here): inline scripts
    carry no nonce.
+
+### Why `main` compresses better: the boundary id is written more times
+
+Boundary ids are unique numbers (`-51`, `-55`, …), and gzip cannot predict them. Measured on the 60-boundary page with
+ids normalised (gzip level 9, bytes per boundary):
+
+| variant | id written N× per boundary | first occurrence | each repeat | other markup | total gzip |
+|---|---|---|---|---|---|
+| main | 3 (`$s:` open, `/$s:` close, `data-target`) | 3.0 | 2.9 | 27.5 | 36.2 |
+| PR #474 | 4 (+ `<?start name="id">`) | 2.8 | 2.9 | 28.9 | 40.4 |
+| local end-stamp | 5 (+ `name`, + `$p:id` stamp) | 2.9 | 2.9 | 30.9 | 45.4 |
+| local react-style | 5 (+ `name`, + `$RC("id")`) | 2.9 | 2.8 | 26.3 | 40.4 |
+
+Every extra copy of an id costs ≈2.9 gzip bytes (a back-reference token), so the id count explains most of the gap:
+PR #474 = one extra id (+2.9) + 1.4 markup; end-stamp = two extra ids (+5.8) + 3.4 markup; react-style = two extra ids
+(+5.5) − 1.2 markup. Brotli narrows the gap (5.7 vs 6.8 / 7.8 / 7.7 B per boundary).
+The ids are repeated because the output carries two marker systems: the `<!--$s:id-->` comments (polyfill/hydration)
+and `<?start name="id">` (the DPU range marker) — *hypothesis:* the PI is needed for native DPU, the comments for the
+polyfill and hydration. If so, dropping the stamp id (newline stamp) takes an end-stamp page back to 4 id copies, and
+removing either marker system would return it to `main`'s 3.
 
 ### The end stamp and "just use a newline"
 

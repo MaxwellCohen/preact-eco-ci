@@ -109,35 +109,35 @@ Gap between the patched counter becoming visible and the first click registering
 | zero | 0 | pr474 | 17528 | 5306 | 4445 | 807 |
 | zero | 0 | local-end-stamp | 17566 | 5327 | 4467 | 821 |
 | zero | 0 | local-react-style | 17592 | 5328 | 4450 | 833 |
-| one | 1 | baseline | 18794 | 5863 | 4948 | 1946 |
-| one | 1 | pr474 | 18806 | 5960 | 5073 | 1951 |
-| one | 1 | local-end-stamp | 18956 | 6073 | 5163 | 2063 |
-| one | 1 | local-react-style | 18477 | 5793 | 4910 | 1583 |
-| popcorn | 16 | baseline | 21211 | 6142 | 5146 | 1943 |
-| popcorn | 16 | pr474 | 21238 | 6293 | 5271 | 1948 |
-| popcorn | 16 | local-end-stamp | 21598 | 6453 | 5397 | 2060 |
-| popcorn | 16 | local-react-style | 21344 | 6179 | 5136 | 2000 |
-| many | 60 | baseline | 26525 | 6851 | 5399 | 1948 |
-| many | 60 | pr474 | 26596 | 7140 | 5520 | 1953 |
-| many | 60 | local-end-stamp | 27572 | 7458 | 5690 | 2065 |
-| many | 60 | local-react-style | 27978 | 7176 | 5469 | 3237 |
-| grid | 100 | baseline | 30199 | 7369 | 5685 | 1941 |
-| grid | 100 | pr474 | 30302 | 7758 | 5853 | 1946 |
-| grid | 100 | local-end-stamp | 31695 | 8165 | 6057 | 2058 |
-| grid | 100 | local-react-style | 32416 | 7854 | 5828 | 3937 |
-| big | 1 | baseline | 34742 | 9307 | 6005 | 1945 |
-| big | 1 | pr474 | 34755 | 9396 | 6091 | 1950 |
-| big | 1 | local-end-stamp | 34906 | 9529 | 6205 | 2062 |
-| big | 1 | local-react-style | 34427 | 9233 | 5940 | 1583 |
+| one | 1 | baseline | 18791 | 5864 | 4950 | 1946 |
+| one | 1 | pr474 | 18802 | 5961 | 5043 | 1951 |
+| one | 1 | local-end-stamp | 18951 | 6073 | 5165 | 2063 |
+| one | 1 | local-react-style | 18472 | 5793 | 4897 | 1582 |
+| popcorn | 16 | baseline | 21172 | 6141 | 5151 | 1943 |
+| popcorn | 16 | pr474 | 21186 | 6290 | 5272 | 1948 |
+| popcorn | 16 | local-end-stamp | 21533 | 6457 | 5409 | 2060 |
+| popcorn | 16 | local-react-style | 21279 | 6178 | 5184 | 1987 |
+| many | 60 | baseline | 26486 | 6839 | 5471 | 1948 |
+| many | 60 | pr474 | 26544 | 7132 | 5599 | 1953 |
+| many | 60 | local-end-stamp | 27507 | 7445 | 5763 | 2065 |
+| many | 60 | local-react-style | 27913 | 7155 | 5519 | 3224 |
+| grid | 100 | baseline | 30142 | 7367 | 5632 | 1941 |
+| grid | 100 | pr474 | 30226 | 7747 | 5843 | 1946 |
+| grid | 100 | local-end-stamp | 31540 | 8134 | 6068 | 2058 |
+| grid | 100 | local-react-style | 32321 | 7831 | 5828 | 3918 |
+| big | 1 | baseline | 34736 | 9306 | 5998 | 1945 |
+| big | 1 | pr474 | 34747 | 9396 | 6094 | 1950 |
+| big | 1 | local-end-stamp | 34896 | 9528 | 6201 | 2062 |
+| big | 1 | local-react-style | 34417 | 9232 | 5945 | 1581 |
 
 ### Projection: end stamp as a single newline instead of `<!--$p:id-->` (variants that emit stamps only; string substitution on the real output, NOT a working implementation, no behavior/timing measured)
 
 | page | boundaries | variant | stamps | raw | raw if newline | gzip | gzip if newline | brotli | brotli if newline |
 |---|---|---|---|---|---|---|---|---|---|
-| one | 1 | local-end-stamp | 1 | 18956 | 18943 | 6073 | 6070 | 5163 | 5178 |
-| popcorn | 16 | local-end-stamp | 16 | 21598 | 21390 | 6453 | 6398 | 5397 | 5376 |
-| many | 60 | local-end-stamp | 60 | 27572 | 26792 | 7458 | 7256 | 5690 | 5656 |
-| grid | 100 | local-end-stamp | 85 | 31695 | 30571 | 8165 | 7868 | 6057 | 5945 |
+| one | 1 | local-end-stamp | 1 | 18951 | 18939 | 6073 | 6070 | 5165 | 5172 |
+| popcorn | 16 | local-end-stamp | 16 | 21533 | 21338 | 6457 | 6401 | 5409 | 5396 |
+| many | 60 | local-end-stamp | 60 | 27507 | 26740 | 7445 | 7251 | 5763 | 5679 |
+| grid | 100 | local-end-stamp | 85 | 31540 | 30447 | 8134 | 7867 | 6068 | 5957 |
 
 ### Overhead model (raw bytes)
 
@@ -145,10 +145,10 @@ Fixed = bytes added once a page has ≥1 boundary (init script/CE) = `one − ze
 
 | variant | one boundary − zero | per boundary (16→100) | per boundary gzip (16→100) |
 |---|---|---|---|
-| baseline | 1322 | 107.0 | 14.6 |
-| pr474 | 1278 | 107.9 | 17.4 |
-| local-end-stamp | 1390 | 120.2 | 20.4 |
-| local-react-style | 885 | 131.8 | 19.9 |
+| baseline | 1319 | 106.8 | 14.6 |
+| pr474 | 1274 | 107.6 | 17.3 |
+| local-end-stamp | 1385 | 119.1 | 20.0 |
+| local-react-style | 880 | 131.5 | 19.7 |
 
 ## Correctness, hydrate=off (stream + polyfill/native only, no client JS) — `/dpu`, 26 checks + isolated foreignObject page
 
