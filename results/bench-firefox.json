@@ -5,883 +5,245 @@
     "baseline": {
       "popcorn": [
         {
-          "ttfb": 181,
-          "fcp": 252,
-          "lcp": 252,
-          "longTask": 0,
-          "maxGap": 7,
-          "hydrated": 2559,
-          "lagMedian": 25,
-          "lagP95": 35,
-          "lagMax": 35,
-          "missing": 0,
-          "lastVisible": 2452,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 369,
-          "fcp": 399,
-          "lcp": 399,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 2960,
-          "lagMedian": 6,
-          "lagP95": 54,
-          "lagMax": 54,
-          "missing": 0,
-          "lastVisible": 2656,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 385,
-          "fcp": 436,
-          "lcp": 436,
-          "longTask": 0,
-          "maxGap": 5,
-          "hydrated": 2874,
-          "lagMedian": 20,
-          "lagP95": 34,
-          "lagMax": 34,
-          "missing": 0,
-          "lastVisible": 2669,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 157,
-          "fcp": 205,
-          "lcp": 205,
-          "longTask": 0,
-          "maxGap": 9,
-          "hydrated": 2542,
-          "lagMedian": 20,
-          "lagP95": 31,
-          "lagMax": 31,
-          "missing": 0,
-          "lastVisible": 2421,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 142,
-          "fcp": 204,
-          "lcp": 204,
-          "longTask": 0,
-          "maxGap": 10,
-          "hydrated": 2494,
-          "lagMedian": 25,
-          "lagP95": 33,
-          "lagMax": 33,
-          "missing": 0,
-          "lastVisible": 2421,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "many": [
-        {
-          "ttfb": 129,
-          "fcp": 173,
-          "lcp": 173,
-          "longTask": 0,
-          "maxGap": 56,
-          "hydrated": 1886,
-          "lagMedian": 22,
-          "lagP95": 31,
-          "lagMax": 36,
-          "missing": 0,
-          "lastVisible": 1658,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 455,
-          "fcp": 501,
-          "lcp": 501,
-          "longTask": 0,
-          "maxGap": 19,
-          "hydrated": 2396,
-          "lagMedian": 117,
-          "lagP95": 180,
-          "lagMax": 201,
-          "missing": 0,
-          "lastVisible": 2119,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 365,
-          "fcp": 401,
-          "lcp": 401,
-          "longTask": 0,
-          "maxGap": 43,
-          "hydrated": 2062,
-          "lagMedian": -29,
-          "lagP95": 45,
-          "lagMax": 89,
-          "missing": 0,
-          "lastVisible": 1879,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 149,
-          "fcp": 181,
-          "lcp": 181,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 1734,
-          "lagMedian": 24,
-          "lagP95": 35,
-          "lagMax": 39,
-          "missing": 0,
-          "lastVisible": 1670,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 94,
-          "fcp": 118,
-          "lcp": 118,
-          "longTask": 0,
-          "maxGap": 13,
-          "hydrated": 1720,
-          "lagMedian": 24,
-          "lagP95": 50,
-          "lagMax": 60,
-          "missing": 0,
-          "lastVisible": 1628,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "grid": [
-        {
-          "ttfb": 126,
-          "fcp": 171,
-          "lcp": 171,
-          "longTask": 0,
-          "maxGap": 14,
-          "hydrated": 797,
-          "lagMedian": 27,
-          "lagP95": 33,
-          "lagMax": 36,
-          "missing": 0,
-          "lastVisible": 745,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 164,
-          "fcp": 207,
-          "lcp": 207,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 887,
-          "lagMedian": 29,
-          "lagP95": 70,
-          "lagMax": 71,
-          "missing": 0,
-          "lastVisible": 782,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 106,
-          "fcp": 139,
-          "lcp": 139,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 855,
-          "lagMedian": 19,
-          "lagP95": 51,
-          "lagMax": 53,
-          "missing": 0,
-          "lastVisible": 747,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 160,
-          "fcp": 201,
-          "lcp": 201,
-          "longTask": 0,
-          "maxGap": 2,
-          "hydrated": 883,
-          "lagMedian": 29,
-          "lagP95": 47,
-          "lagMax": 49,
-          "missing": 0,
-          "lastVisible": 793,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 158,
-          "fcp": 204,
-          "lcp": 204,
-          "longTask": 0,
-          "maxGap": 105,
-          "hydrated": 936,
-          "lagMedian": 47,
-          "lagP95": 132,
-          "lagMax": 156,
-          "missing": 0,
-          "lastVisible": 842,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "interactive": {
-        "late": [
-          {
-            "visible": 631,
-            "live": 753,
-            "gap": 122,
-            "hydrated": 736
-          },
-          {
-            "visible": 622,
-            "live": 736,
-            "gap": 114,
-            "hydrated": 719
-          },
-          {
-            "visible": 610,
-            "live": 842,
-            "gap": 232,
-            "hydrated": 830
-          },
-          {
-            "visible": 538,
-            "live": 662,
-            "gap": 124,
-            "hydrated": 648
-          },
-          {
-            "visible": 556,
-            "live": 747,
-            "gap": 191,
-            "hydrated": 730
-          }
-        ],
-        "early": [
-          {
-            "visible": 252,
-            "live": 265,
-            "gap": 13,
-            "hydrated": 252
-          },
-          {
-            "visible": 324,
-            "live": 335,
-            "gap": 11,
-            "hydrated": 324
-          },
-          {
-            "visible": 207,
-            "live": 223,
-            "gap": 16,
-            "hydrated": 207
-          },
-          {
-            "visible": 275,
-            "live": 291,
-            "gap": 16,
-            "hydrated": 275
-          },
-          {
-            "visible": 175,
-            "live": 190,
-            "gap": 15,
-            "hydrated": 175
-          }
-        ]
-      },
-      "csp": {
-        "leftoverTpl": 0,
-        "leftoverFb": 16,
-        "errors": 0
-      }
-    },
-    "dpu-end-stamp": {
-      "popcorn": [
-        {
-          "ttfb": 123,
-          "fcp": 153,
-          "lcp": 153,
-          "longTask": 0,
-          "maxGap": 4,
-          "hydrated": 2463,
-          "lagMedian": 11,
-          "lagP95": 46,
-          "lagMax": 46,
-          "missing": 0,
-          "lastVisible": 2379,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 126,
-          "fcp": 158,
-          "lcp": 158,
-          "longTask": 0,
-          "maxGap": 4,
-          "hydrated": 2485,
-          "lagMedian": 16,
-          "lagP95": 36,
-          "lagMax": 36,
-          "missing": 0,
-          "lastVisible": 2383,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 102,
-          "fcp": 139,
-          "lcp": 139,
-          "longTask": 0,
-          "maxGap": 8,
-          "hydrated": 2427,
-          "lagMedian": 18,
-          "lagP95": 50,
-          "lagMax": 50,
-          "missing": 0,
-          "lastVisible": 2366,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 128,
-          "fcp": 160,
-          "lcp": 160,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 2483,
-          "lagMedian": 11,
-          "lagP95": 42,
-          "lagMax": 42,
-          "missing": 0,
-          "lastVisible": 2386,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 140,
+          "ttfb": 143,
           "fcp": 176,
           "lcp": 176,
           "longTask": 0,
-          "maxGap": 27,
-          "hydrated": 2461,
-          "lagMedian": 15,
-          "lagP95": 102,
-          "lagMax": 102,
-          "missing": 0,
-          "lastVisible": 2395,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "many": [
-        {
-          "ttfb": 105,
-          "fcp": 134,
-          "lcp": 134,
-          "longTask": 0,
-          "maxGap": 10,
-          "hydrated": 1737,
-          "lagMedian": 11,
-          "lagP95": 17,
-          "lagMax": 17,
-          "missing": 0,
-          "lastVisible": 1622,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 101,
-          "fcp": 126,
-          "lcp": 126,
-          "longTask": 0,
-          "maxGap": 46,
-          "hydrated": 1699,
-          "lagMedian": 3,
-          "lagP95": 60,
-          "lagMax": 82,
-          "missing": 0,
-          "lastVisible": 1611,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 155,
-          "fcp": 202,
-          "lcp": 202,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 1737,
-          "lagMedian": 11,
-          "lagP95": 19,
-          "lagMax": 19,
-          "missing": 0,
-          "lastVisible": 1668,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 111,
-          "fcp": 160,
-          "lcp": 160,
-          "longTask": 0,
-          "maxGap": 15,
-          "hydrated": 1704,
-          "lagMedian": 11,
-          "lagP95": 25,
-          "lagMax": 34,
-          "missing": 0,
-          "lastVisible": 1632,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 89,
-          "fcp": 127,
-          "lcp": 127,
-          "longTask": 0,
-          "maxGap": 5,
-          "hydrated": 1705,
-          "lagMedian": 17,
-          "lagP95": 24,
-          "lagMax": 24,
-          "missing": 0,
-          "lastVisible": 1609,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "grid": [
-        {
-          "ttfb": 149,
-          "fcp": 204,
-          "lcp": 204,
-          "longTask": 0,
-          "maxGap": 5,
-          "hydrated": 880,
-          "lagMedian": 11,
-          "lagP95": 34,
-          "lagMax": 34,
-          "missing": 0,
-          "lastVisible": 743,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 146,
-          "fcp": 185,
-          "lcp": 185,
-          "longTask": 0,
-          "maxGap": 4,
-          "hydrated": 813,
-          "lagMedian": 13,
-          "lagP95": 16,
-          "lagMax": 16,
-          "missing": 0,
-          "lastVisible": 750,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 168,
-          "fcp": 205,
-          "lcp": 205,
-          "longTask": 0,
-          "maxGap": 4,
-          "hydrated": 879,
-          "lagMedian": 12,
-          "lagP95": 15,
-          "lagMax": 15,
-          "missing": 0,
-          "lastVisible": 771,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 105,
-          "fcp": 146,
-          "lcp": 146,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 808,
-          "lagMedian": 11,
-          "lagP95": 16,
-          "lagMax": 16,
-          "missing": 0,
-          "lastVisible": 709,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 125,
-          "fcp": 158,
-          "lcp": 158,
-          "longTask": 0,
-          "maxGap": 81,
-          "hydrated": 996,
-          "lagMedian": 61,
-          "lagP95": 130,
-          "lagMax": 130,
-          "missing": 0,
-          "lastVisible": 855,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "interactive": {
-        "late": [
-          {
-            "visible": 534,
-            "live": 671,
-            "gap": 137,
-            "hydrated": 656
-          },
-          {
-            "visible": 488,
-            "live": 627,
-            "gap": 139,
-            "hydrated": 615
-          },
-          {
-            "visible": 543,
-            "live": 611,
-            "gap": 68,
-            "hydrated": 593
-          },
-          {
-            "visible": 554,
-            "live": 715,
-            "gap": 161,
-            "hydrated": 697
-          },
-          {
-            "visible": 476,
-            "live": 561,
-            "gap": 85,
-            "hydrated": 547
-          }
-        ],
-        "early": [
-          {
-            "visible": 191,
-            "live": 210,
-            "gap": 19,
-            "hydrated": 191
-          },
-          {
-            "visible": 221,
-            "live": 232,
-            "gap": 11,
-            "hydrated": 221
-          },
-          {
-            "visible": 197,
-            "live": 213,
-            "gap": 16,
-            "hydrated": 197
-          },
-          {
-            "visible": 202,
-            "live": 220,
-            "gap": 18,
-            "hydrated": 202
-          },
-          {
-            "visible": 182,
-            "live": 193,
-            "gap": 11,
-            "hydrated": 182
-          }
-        ]
-      },
-      "csp": {
-        "leftoverTpl": 112,
-        "leftoverFb": 10,
-        "errors": 0
-      }
-    },
-    "dpu-support-react-style": {
-      "popcorn": [
-        {
-          "ttfb": 151,
-          "fcp": 180,
-          "lcp": 180,
-          "longTask": 0,
-          "maxGap": 3,
-          "hydrated": 2481,
-          "lagMedian": -11,
-          "lagP95": -2,
-          "lagMax": -2,
-          "missing": 0,
-          "lastVisible": 2409,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 95,
-          "fcp": 128,
-          "lcp": 128,
-          "longTask": 0,
-          "maxGap": 14,
-          "hydrated": 2426,
-          "lagMedian": -11,
-          "lagP95": 24,
-          "lagMax": 24,
-          "missing": 0,
-          "lastVisible": 2342,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 148,
-          "fcp": 182,
-          "lcp": 182,
-          "longTask": 0,
-          "maxGap": 111,
-          "hydrated": 2520,
-          "lagMedian": 1,
-          "lagP95": 117,
-          "lagMax": 117,
-          "missing": 0,
-          "lastVisible": 2404,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 141,
-          "fcp": 185,
-          "lcp": 185,
-          "longTask": 0,
-          "maxGap": 8,
-          "hydrated": 2499,
-          "lagMedian": -1,
-          "lagP95": 2,
-          "lagMax": 2,
-          "missing": 0,
-          "lastVisible": 2399,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 121,
-          "fcp": 175,
-          "lcp": 175,
-          "longTask": 0,
-          "maxGap": 5,
-          "hydrated": 2425,
-          "lagMedian": -4,
-          "lagP95": 3,
-          "lagMax": 3,
-          "missing": 0,
-          "lastVisible": 2376,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "many": [
-        {
-          "ttfb": 146,
-          "fcp": 181,
-          "lcp": 181,
-          "longTask": 0,
           "maxGap": 6,
-          "hydrated": 1782,
-          "lagMedian": -8,
-          "lagP95": 8,
-          "lagMax": 20,
+          "hydrated": 2463,
+          "lagMedian": 26,
+          "lagP95": 53,
+          "lagMax": 53,
           "missing": 0,
-          "lastVisible": 1657,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 126,
-          "fcp": 168,
-          "lcp": 168,
-          "longTask": 0,
-          "maxGap": 5,
-          "hydrated": 1709,
-          "lagMedian": -6,
-          "lagP95": 8,
-          "lagMax": 10,
-          "missing": 0,
-          "lastVisible": 1648,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 162,
-          "fcp": 197,
-          "lcp": 197,
-          "longTask": 0,
-          "maxGap": 116,
-          "hydrated": 1754,
-          "lagMedian": -10,
-          "lagP95": 1,
-          "lagMax": 10,
-          "missing": 0,
-          "lastVisible": 1681,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 88,
-          "fcp": 124,
-          "lcp": 124,
-          "longTask": 0,
-          "maxGap": 4,
-          "hydrated": 1690,
-          "lagMedian": 0,
-          "lagP95": 8,
-          "lagMax": 25,
-          "missing": 0,
-          "lastVisible": 1611,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 117,
-          "fcp": 157,
-          "lcp": 157,
-          "longTask": 0,
-          "maxGap": 8,
-          "hydrated": 1772,
-          "lagMedian": -2,
-          "lagP95": 8,
-          "lagMax": 26,
-          "missing": 0,
-          "lastVisible": 1645,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        }
-      ],
-      "grid": [
-        {
-          "ttfb": 122,
-          "fcp": 200,
-          "lcp": 200,
-          "longTask": 0,
-          "maxGap": 4,
-          "hydrated": 776,
-          "lagMedian": 0,
-          "lagP95": 27,
-          "lagMax": 27,
-          "missing": 0,
-          "lastVisible": 730,
+          "lastVisible": 2401,
           "leftoverTpl": 0,
           "leftoverFb": 0,
           "errors": 0
         },
         {
           "ttfb": 127,
-          "fcp": 175,
-          "lcp": 175,
+          "fcp": 152,
+          "lcp": 152,
           "longTask": 0,
-          "maxGap": 5,
-          "hydrated": 836,
-          "lagMedian": 3,
-          "lagP95": 13,
-          "lagMax": 15,
+          "maxGap": 15,
+          "hydrated": 2485,
+          "lagMedian": 20,
+          "lagP95": 51,
+          "lagMax": 51,
           "missing": 0,
-          "lastVisible": 742,
+          "lastVisible": 2394,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 143,
+          "fcp": 179,
+          "lcp": 179,
+          "longTask": 0,
+          "maxGap": 10,
+          "hydrated": 2422,
+          "lagMedian": -10,
+          "lagP95": 40,
+          "lagMax": 40,
+          "missing": 0,
+          "lastVisible": 2364,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 124,
+          "fcp": 158,
+          "lcp": 158,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 2475,
+          "lagMedian": 27,
+          "lagP95": 49,
+          "lagMax": 49,
+          "missing": 0,
+          "lastVisible": 2390,
           "leftoverTpl": 0,
           "leftoverFb": 0,
           "errors": 0
         },
         {
           "ttfb": 84,
-          "fcp": 124,
-          "lcp": 124,
+          "fcp": 115,
+          "lcp": 115,
           "longTask": 0,
           "maxGap": 5,
-          "hydrated": 798,
-          "lagMedian": 5,
-          "lagP95": 16,
+          "hydrated": 2413,
+          "lagMedian": 21,
+          "lagP95": 33,
+          "lagMax": 33,
+          "missing": 0,
+          "lastVisible": 2351,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 154,
+          "fcp": 195,
+          "lcp": 195,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 1779,
+          "lagMedian": 28,
+          "lagP95": 50,
+          "lagMax": 61,
+          "missing": 0,
+          "lastVisible": 1695,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 166,
+          "fcp": 197,
+          "lcp": 197,
+          "longTask": 0,
+          "maxGap": 29,
+          "hydrated": 1813,
+          "lagMedian": 29,
+          "lagP95": 50,
+          "lagMax": 70,
+          "missing": 0,
+          "lastVisible": 1705,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 74,
+          "fcp": 96,
+          "lcp": 96,
+          "longTask": 0,
+          "maxGap": 11,
+          "hydrated": 1677,
+          "lagMedian": 28,
+          "lagP95": 41,
+          "lagMax": 45,
+          "missing": 0,
+          "lastVisible": 1617,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 138,
+          "fcp": 164,
+          "lcp": 164,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 1695,
+          "lagMedian": -1,
+          "lagP95": 10,
           "lagMax": 16,
           "missing": 0,
-          "lastVisible": 691,
+          "lastVisible": 1639,
           "leftoverTpl": 0,
           "leftoverFb": 0,
           "errors": 0
         },
         {
-          "ttfb": 126,
-          "fcp": 161,
-          "lcp": 161,
-          "longTask": 0,
-          "maxGap": 6,
-          "hydrated": 862,
-          "lagMedian": -3,
-          "lagP95": 6,
-          "lagMax": 7,
-          "missing": 0,
-          "lastVisible": 730,
-          "leftoverTpl": 0,
-          "leftoverFb": 0,
-          "errors": 0
-        },
-        {
-          "ttfb": 119,
-          "fcp": 149,
-          "lcp": 149,
+          "ttfb": 122,
+          "fcp": 154,
+          "lcp": 154,
           "longTask": 0,
           "maxGap": 5,
-          "hydrated": 860,
-          "lagMedian": 6,
-          "lagP95": 14,
-          "lagMax": 18,
+          "hydrated": 1725,
+          "lagMedian": 26,
+          "lagP95": 34,
+          "lagMax": 43,
           "missing": 0,
-          "lastVisible": 729,
+          "lastVisible": 1655,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 134,
+          "fcp": 158,
+          "lcp": 158,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 847,
+          "lagMedian": 25,
+          "lagP95": 32,
+          "lagMax": 34,
+          "missing": 0,
+          "lastVisible": 749,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 118,
+          "fcp": 148,
+          "lcp": 148,
+          "longTask": 0,
+          "maxGap": 10,
+          "hydrated": 793,
+          "lagMedian": 35,
+          "lagP95": 56,
+          "lagMax": 64,
+          "missing": 0,
+          "lastVisible": 744,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 121,
+          "fcp": 679,
+          "lcp": 679,
+          "longTask": 0,
+          "maxGap": 80,
+          "hydrated": 777,
+          "lagMedian": 254,
+          "lagP95": 448,
+          "lagMax": 449,
+          "missing": 0,
+          "lastVisible": 732,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 99,
+          "fcp": 136,
+          "lcp": 136,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 806,
+          "lagMedian": 22,
+          "lagP95": 42,
+          "lagMax": 46,
+          "missing": 0,
+          "lastVisible": 712,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 88,
+          "fcp": 122,
+          "lcp": 122,
+          "longTask": 0,
+          "maxGap": 31,
+          "hydrated": 867,
+          "lagMedian": 34,
+          "lagP95": 42,
+          "lagMax": 45,
+          "missing": 0,
+          "lastVisible": 724,
           "leftoverTpl": 0,
           "leftoverFb": 0,
           "errors": 0
@@ -891,65 +253,1022 @@
         "late": [
           {
             "visible": 539,
+            "live": 676,
+            "gap": 137,
+            "hydrated": 656
+          },
+          {
+            "visible": 511,
+            "live": 645,
+            "gap": 134,
+            "hydrated": 630
+          },
+          {
+            "visible": 508,
+            "live": 617,
+            "gap": 109,
+            "hydrated": 603
+          },
+          {
+            "visible": 506,
+            "live": 598,
+            "gap": 92,
+            "hydrated": 576
+          },
+          {
+            "visible": 534,
             "live": 653,
-            "gap": 114,
-            "hydrated": 642
-          },
-          {
-            "visible": 530,
-            "live": 687,
-            "gap": 157,
-            "hydrated": 671
-          },
-          {
-            "visible": 524,
-            "live": 590,
-            "gap": 66,
-            "hydrated": 577
-          },
-          {
-            "visible": 495,
-            "live": 570,
-            "gap": 75,
-            "hydrated": 559
-          },
-          {
-            "visible": 554,
-            "live": 717,
-            "gap": 163,
-            "hydrated": 705
+            "gap": 119,
+            "hydrated": 632
           }
         ],
         "early": [
           {
-            "visible": 241,
-            "live": 259,
-            "gap": 18,
-            "hydrated": 241
+            "visible": 208,
+            "live": 227,
+            "gap": 19,
+            "hydrated": 208
           },
           {
-            "visible": 362,
-            "live": 384,
-            "gap": 22,
-            "hydrated": 362
+            "visible": 190,
+            "live": 205,
+            "gap": 15,
+            "hydrated": 190
           },
           {
-            "visible": 262,
-            "live": 273,
-            "gap": 11,
-            "hydrated": 262
+            "visible": 343,
+            "live": 363,
+            "gap": 20,
+            "hydrated": 343
           },
           {
-            "visible": 212,
-            "live": 224,
-            "gap": 12,
-            "hydrated": 212
-          },
-          {
-            "visible": 250,
-            "live": 260,
+            "visible": 209,
+            "live": 219,
             "gap": 10,
-            "hydrated": 250
+            "hydrated": 209
+          },
+          {
+            "visible": 216,
+            "live": 235,
+            "gap": 19,
+            "hydrated": 216
+          }
+        ]
+      },
+      "csp": {
+        "leftoverTpl": 0,
+        "leftoverFb": 16,
+        "errors": 0
+      }
+    },
+    "pr474": {
+      "popcorn": [
+        {
+          "ttfb": 202,
+          "fcp": 231,
+          "lcp": 231,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 2543,
+          "lagMedian": 135,
+          "lagP95": 240,
+          "lagMax": 240,
+          "missing": 1,
+          "lastVisible": 2459,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 126,
+          "fcp": 152,
+          "lcp": 152,
+          "longTask": 0,
+          "maxGap": 29,
+          "hydrated": 2482,
+          "lagMedian": 134,
+          "lagP95": 235,
+          "lagMax": 235,
+          "missing": 1,
+          "lastVisible": 2383,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 106,
+          "fcp": 130,
+          "lcp": 130,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 2479,
+          "lagMedian": 134,
+          "lagP95": 227,
+          "lagMax": 227,
+          "missing": 1,
+          "lastVisible": 2357,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 112,
+          "fcp": 145,
+          "lcp": 145,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 2407,
+          "lagMedian": 110,
+          "lagP95": 210,
+          "lagMax": 210,
+          "missing": 1,
+          "lastVisible": 2351,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 152,
+          "fcp": 243,
+          "lcp": 243,
+          "longTask": 0,
+          "maxGap": 497,
+          "hydrated": 2985,
+          "lagMedian": 132,
+          "lagP95": 285,
+          "lagMax": 285,
+          "missing": 1,
+          "lastVisible": 2418,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 130,
+          "fcp": 171,
+          "lcp": 171,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 1728,
+          "lagMedian": 4,
+          "lagP95": 66,
+          "lagMax": 70,
+          "missing": 1,
+          "lastVisible": 1636,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 120,
+          "fcp": 176,
+          "lcp": 176,
+          "longTask": 0,
+          "maxGap": 6,
+          "hydrated": 1739,
+          "lagMedian": 30,
+          "lagP95": 113,
+          "lagMax": 173,
+          "missing": 1,
+          "lastVisible": 1641,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 94,
+          "fcp": 136,
+          "lcp": 136,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 1683,
+          "lagMedian": 19,
+          "lagP95": 83,
+          "lagMax": 84,
+          "missing": 1,
+          "lastVisible": 1614,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 111,
+          "fcp": 144,
+          "lcp": 144,
+          "longTask": 0,
+          "maxGap": 7,
+          "hydrated": 1702,
+          "lagMedian": 19,
+          "lagP95": 81,
+          "lagMax": 82,
+          "missing": 1,
+          "lastVisible": 1633,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 90,
+          "fcp": 125,
+          "lcp": 125,
+          "longTask": 0,
+          "maxGap": 11,
+          "hydrated": 1717,
+          "lagMedian": 20,
+          "lagP95": 81,
+          "lagMax": 88,
+          "missing": 1,
+          "lastVisible": 1610,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 123,
+          "fcp": 164,
+          "lcp": 164,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 818,
+          "lagMedian": 13,
+          "lagP95": 105,
+          "lagMax": 117,
+          "missing": 1,
+          "lastVisible": 728,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 146,
+          "fcp": 191,
+          "lcp": 191,
+          "longTask": 0,
+          "maxGap": 7,
+          "hydrated": 812,
+          "lagMedian": 21,
+          "lagP95": 109,
+          "lagMax": 125,
+          "missing": 1,
+          "lastVisible": 755,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 148,
+          "fcp": 181,
+          "lcp": 181,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 859,
+          "lagMedian": 2,
+          "lagP95": 85,
+          "lagMax": 108,
+          "missing": 1,
+          "lastVisible": 733,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 221,
+          "fcp": 253,
+          "lcp": 253,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 931,
+          "lagMedian": -15,
+          "lagP95": 69,
+          "lagMax": 93,
+          "missing": 1,
+          "lastVisible": 790,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 162,
+          "fcp": 225,
+          "lcp": 225,
+          "longTask": 0,
+          "maxGap": 7,
+          "hydrated": 888,
+          "lagMedian": 14,
+          "lagP95": 102,
+          "lagMax": 119,
+          "missing": 1,
+          "lastVisible": 764,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "interactive": {
+        "late": [
+          {
+            "visible": 701,
+            "live": 715,
+            "gap": 14,
+            "hydrated": 701
+          },
+          {
+            "visible": 588,
+            "live": 601,
+            "gap": 13,
+            "hydrated": 588
+          },
+          {
+            "visible": 686,
+            "live": 699,
+            "gap": 13,
+            "hydrated": 686
+          },
+          {
+            "visible": 584,
+            "live": 595,
+            "gap": 11,
+            "hydrated": 584
+          },
+          {
+            "visible": 673,
+            "live": 686,
+            "gap": 13,
+            "hydrated": 673
+          }
+        ],
+        "early": [
+          {
+            "visible": 216,
+            "live": 238,
+            "gap": 22,
+            "hydrated": 216
+          },
+          {
+            "visible": 231,
+            "live": 242,
+            "gap": 11,
+            "hydrated": 231
+          },
+          {
+            "visible": 236,
+            "live": 247,
+            "gap": 11,
+            "hydrated": 236
+          },
+          {
+            "visible": 157,
+            "live": 180,
+            "gap": 23,
+            "hydrated": 157
+          },
+          {
+            "visible": 185,
+            "live": 198,
+            "gap": 13,
+            "hydrated": 185
+          }
+        ]
+      },
+      "csp": {
+        "leftoverTpl": 112,
+        "leftoverFb": 10,
+        "errors": 0
+      }
+    },
+    "local-end-stamp": {
+      "popcorn": [
+        {
+          "ttfb": 221,
+          "fcp": 252,
+          "lcp": 252,
+          "longTask": 0,
+          "maxGap": 99,
+          "hydrated": 2681,
+          "lagMedian": 15,
+          "lagP95": 233,
+          "lagMax": 233,
+          "missing": 0,
+          "lastVisible": 2554,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 132,
+          "fcp": 165,
+          "lcp": 165,
+          "longTask": 0,
+          "maxGap": 9,
+          "hydrated": 2517,
+          "lagMedian": 20,
+          "lagP95": 42,
+          "lagMax": 42,
+          "missing": 0,
+          "lastVisible": 2393,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 119,
+          "fcp": 158,
+          "lcp": 158,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 2444,
+          "lagMedian": 14,
+          "lagP95": 31,
+          "lagMax": 31,
+          "missing": 0,
+          "lastVisible": 2376,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 127,
+          "fcp": 157,
+          "lcp": 157,
+          "longTask": 0,
+          "maxGap": 8,
+          "hydrated": 2458,
+          "lagMedian": 10,
+          "lagP95": 40,
+          "lagMax": 40,
+          "missing": 0,
+          "lastVisible": 2378,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 93,
+          "fcp": 131,
+          "lcp": 131,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 2394,
+          "lagMedian": 12,
+          "lagP95": 18,
+          "lagMax": 18,
+          "missing": 0,
+          "lastVisible": 2346,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 117,
+          "fcp": 168,
+          "lcp": 168,
+          "longTask": 0,
+          "maxGap": 10,
+          "hydrated": 1709,
+          "lagMedian": 11,
+          "lagP95": 31,
+          "lagMax": 41,
+          "missing": 0,
+          "lastVisible": 1632,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 188,
+          "fcp": 275,
+          "lcp": 275,
+          "longTask": 0,
+          "maxGap": 39,
+          "hydrated": 1709,
+          "lagMedian": -38,
+          "lagP95": -1,
+          "lagMax": 0,
+          "missing": 0,
+          "lastVisible": 1653,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 79,
+          "fcp": 106,
+          "lcp": 106,
+          "longTask": 0,
+          "maxGap": 17,
+          "hydrated": 1683,
+          "lagMedian": 11,
+          "lagP95": 16,
+          "lagMax": 17,
+          "missing": 0,
+          "lastVisible": 1595,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 131,
+          "fcp": 157,
+          "lcp": 157,
+          "longTask": 0,
+          "maxGap": 12,
+          "hydrated": 1715,
+          "lagMedian": 16,
+          "lagP95": 20,
+          "lagMax": 22,
+          "missing": 0,
+          "lastVisible": 1654,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 90,
+          "fcp": 131,
+          "lcp": 131,
+          "longTask": 0,
+          "maxGap": 6,
+          "hydrated": 1710,
+          "lagMedian": 19,
+          "lagP95": 26,
+          "lagMax": 29,
+          "missing": 0,
+          "lastVisible": 1621,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 184,
+          "fcp": 220,
+          "lcp": 220,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 868,
+          "lagMedian": -1,
+          "lagP95": 6,
+          "lagMax": 6,
+          "missing": 0,
+          "lastVisible": 775,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 131,
+          "fcp": 457,
+          "lcp": 457,
+          "longTask": 0,
+          "maxGap": 3,
+          "hydrated": 837,
+          "lagMedian": 15,
+          "lagP95": 300,
+          "lagMax": 300,
+          "missing": 0,
+          "lastVisible": 728,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 110,
+          "fcp": 181,
+          "lcp": 181,
+          "longTask": 0,
+          "maxGap": 8,
+          "hydrated": 807,
+          "lagMedian": 18,
+          "lagP95": 40,
+          "lagMax": 40,
+          "missing": 0,
+          "lastVisible": 713,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 143,
+          "fcp": 170,
+          "lcp": 170,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 806,
+          "lagMedian": 9,
+          "lagP95": 17,
+          "lagMax": 17,
+          "missing": 0,
+          "lastVisible": 741,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 168,
+          "fcp": 203,
+          "lcp": 203,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 880,
+          "lagMedian": 8,
+          "lagP95": 17,
+          "lagMax": 17,
+          "missing": 0,
+          "lastVisible": 772,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "interactive": {
+        "late": [
+          {
+            "visible": 546,
+            "live": 715,
+            "gap": 169,
+            "hydrated": 700
+          },
+          {
+            "visible": 498,
+            "live": 610,
+            "gap": 112,
+            "hydrated": 594
+          },
+          {
+            "visible": 547,
+            "live": 626,
+            "gap": 79,
+            "hydrated": 616
+          },
+          {
+            "visible": 560,
+            "live": 721,
+            "gap": 161,
+            "hydrated": 701
+          },
+          {
+            "visible": 493,
+            "live": 592,
+            "gap": 99,
+            "hydrated": 576
+          }
+        ],
+        "early": [
+          {
+            "visible": 218,
+            "live": 234,
+            "gap": 16,
+            "hydrated": 218
+          },
+          {
+            "visible": 188,
+            "live": 201,
+            "gap": 13,
+            "hydrated": 188
+          },
+          {
+            "visible": 306,
+            "live": 325,
+            "gap": 19,
+            "hydrated": 306
+          },
+          {
+            "visible": 222,
+            "live": 235,
+            "gap": 13,
+            "hydrated": 222
+          },
+          {
+            "visible": 209,
+            "live": 230,
+            "gap": 21,
+            "hydrated": 209
+          }
+        ]
+      },
+      "csp": {
+        "leftoverTpl": 112,
+        "leftoverFb": 10,
+        "errors": 0
+      }
+    },
+    "local-react-style": {
+      "popcorn": [
+        {
+          "ttfb": 144,
+          "fcp": 186,
+          "lcp": 186,
+          "longTask": 0,
+          "maxGap": 6,
+          "hydrated": 2480,
+          "lagMedian": -7,
+          "lagP95": 33,
+          "lagMax": 33,
+          "missing": 0,
+          "lastVisible": 2394,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 99,
+          "fcp": 138,
+          "lcp": 138,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 2447,
+          "lagMedian": -4,
+          "lagP95": 8,
+          "lagMax": 8,
+          "missing": 0,
+          "lastVisible": 2353,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 83,
+          "fcp": 109,
+          "lcp": 109,
+          "longTask": 0,
+          "maxGap": 6,
+          "hydrated": 2412,
+          "lagMedian": -12,
+          "lagP95": 26,
+          "lagMax": 26,
+          "missing": 0,
+          "lastVisible": 2331,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 102,
+          "fcp": 129,
+          "lcp": 129,
+          "longTask": 0,
+          "maxGap": 17,
+          "hydrated": 2414,
+          "lagMedian": -4,
+          "lagP95": 22,
+          "lagMax": 22,
+          "missing": 0,
+          "lastVisible": 2359,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 122,
+          "fcp": 150,
+          "lcp": 150,
+          "longTask": 0,
+          "maxGap": 35,
+          "hydrated": 2441,
+          "lagMedian": -9,
+          "lagP95": -1,
+          "lagMax": -1,
+          "missing": 0,
+          "lastVisible": 2372,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "many": [
+        {
+          "ttfb": 167,
+          "fcp": 197,
+          "lcp": 197,
+          "longTask": 0,
+          "maxGap": 10,
+          "hydrated": 1789,
+          "lagMedian": -5,
+          "lagP95": 0,
+          "lagMax": 28,
+          "missing": 0,
+          "lastVisible": 1681,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 145,
+          "fcp": 175,
+          "lcp": 175,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 1716,
+          "lagMedian": -2,
+          "lagP95": 0,
+          "lagMax": 5,
+          "missing": 0,
+          "lastVisible": 1664,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 99,
+          "fcp": 129,
+          "lcp": 129,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 1700,
+          "lagMedian": -5,
+          "lagP95": 10,
+          "lagMax": 24,
+          "missing": 0,
+          "lastVisible": 1614,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 110,
+          "fcp": 141,
+          "lcp": 141,
+          "longTask": 0,
+          "maxGap": 5,
+          "hydrated": 1710,
+          "lagMedian": -4,
+          "lagP95": 2,
+          "lagMax": 4,
+          "missing": 0,
+          "lastVisible": 1630,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 110,
+          "fcp": 141,
+          "lcp": 141,
+          "longTask": 0,
+          "maxGap": 16,
+          "hydrated": 1727,
+          "lagMedian": 2,
+          "lagP95": 10,
+          "lagMax": 13,
+          "missing": 0,
+          "lastVisible": 1633,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "grid": [
+        {
+          "ttfb": 137,
+          "fcp": 190,
+          "lcp": 190,
+          "longTask": 0,
+          "maxGap": 16,
+          "hydrated": 858,
+          "lagMedian": 6,
+          "lagP95": 30,
+          "lagMax": 30,
+          "missing": 0,
+          "lastVisible": 748,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 126,
+          "fcp": 154,
+          "lcp": 154,
+          "longTask": 0,
+          "maxGap": 13,
+          "hydrated": 836,
+          "lagMedian": 4,
+          "lagP95": 17,
+          "lagMax": 21,
+          "missing": 0,
+          "lastVisible": 747,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 123,
+          "fcp": 168,
+          "lcp": 168,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 820,
+          "lagMedian": 2,
+          "lagP95": 14,
+          "lagMax": 14,
+          "missing": 0,
+          "lastVisible": 727,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 129,
+          "fcp": 169,
+          "lcp": 169,
+          "longTask": 0,
+          "maxGap": 4,
+          "hydrated": 789,
+          "lagMedian": 2,
+          "lagP95": 12,
+          "lagMax": 12,
+          "missing": 0,
+          "lastVisible": 735,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        },
+        {
+          "ttfb": 131,
+          "fcp": 172,
+          "lcp": 172,
+          "longTask": 0,
+          "maxGap": 59,
+          "hydrated": 876,
+          "lagMedian": 7,
+          "lagP95": 93,
+          "lagMax": 94,
+          "missing": 0,
+          "lastVisible": 739,
+          "leftoverTpl": 0,
+          "leftoverFb": 0,
+          "errors": 0
+        }
+      ],
+      "interactive": {
+        "late": [
+          {
+            "visible": 590,
+            "live": 731,
+            "gap": 141,
+            "hydrated": 711
+          },
+          {
+            "visible": 546,
+            "live": 691,
+            "gap": 145,
+            "hydrated": 672
+          },
+          {
+            "visible": 546,
+            "live": 687,
+            "gap": 141,
+            "hydrated": 668
+          },
+          {
+            "visible": 564,
+            "live": 735,
+            "gap": 171,
+            "hydrated": 720
+          },
+          {
+            "visible": 538,
+            "live": 681,
+            "gap": 143,
+            "hydrated": 664
+          }
+        ],
+        "early": [
+          {
+            "visible": 222,
+            "live": 238,
+            "gap": 16,
+            "hydrated": 222
+          },
+          {
+            "visible": 167,
+            "live": 179,
+            "gap": 12,
+            "hydrated": 167
+          },
+          {
+            "visible": 195,
+            "live": 209,
+            "gap": 14,
+            "hydrated": 195
+          },
+          {
+            "visible": 213,
+            "live": 230,
+            "gap": 17,
+            "hydrated": 213
+          },
+          {
+            "visible": 176,
+            "live": 196,
+            "gap": 20,
+            "hydrated": 176
           }
         ]
       },

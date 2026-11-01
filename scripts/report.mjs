@@ -4,8 +4,8 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 const rd = f => (existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null);
 const bench = Object.fromEntries(['chromium', 'firefox', 'webkit'].map(b => [b, rd(`results/bench-${b}.json`)]).filter(([, v]) => v));
 const size = rd('results/size.json');
-const cmp = rd('results/compare.json');
-const V = ['baseline', 'dpu-end-stamp', 'dpu-support-react-style'];
+const cmps = { off: rd('results/compare-off.json'), late: rd('results/compare-late.json') };
+const V = Object.keys(Object.values(bench)[0]?.variants ?? {});
 const med = a => { const s = a.filter(x => x != null && !isNaN(x)).sort((x, y) => x - y); return s.length ? s[Math.floor(s.length / 2)] : null; };
 const f = (x, d = 0) => (x == null ? '–' : x.toFixed(d));
 const col = (rows, k) => med(rows.filter(r => !r.hung).map(r => r[k]));
@@ -36,6 +36,11 @@ if (size) {
 	for (const k of ['zero', 'one', 'popcorn', 'many', 'grid', 'big']) for (const v of V) {
 		const s = size[v][k]; md += `| ${k} | ${s.boundaries} | ${v} | ${s.raw} | ${s.gzip} | ${s.brotli} | ${s.scriptBytes} |\n`;
 	}
+	md += `\n### Projection: end stamp as a single newline instead of \`<!--$p:id-->\` (variants that emit stamps only; string substitution on the real output, NOT a working implementation, no behavior/timing measured)\n\n| page | boundaries | variant | stamps | raw | raw if newline | gzip | gzip if newline | brotli | brotli if newline |\n|---|---|---|---|---|---|---|---|---|---|\n`;
+	for (const k of ['one', 'popcorn', 'many', 'grid']) for (const v of V) {
+		const x = size[v][k]; if (!x.stamps) continue;
+		md += `| ${k} | ${x.boundaries} | ${v} | ${x.stamps} | ${x.raw} | ${x.nlRaw} | ${x.gzip} | ${x.nlGzip} | ${x.brotli} | ${x.nlBrotli} |\n`;
+	}
 	md += `\n### Overhead model (raw bytes)\n\nFixed = bytes added once a page has ≥1 boundary (init script/CE) = \`one − zero\` minus that boundary's own content. Per-boundary = slope between 16, 60 and 100 boundaries.\n\n| variant | one boundary − zero | per boundary (16→100) | per boundary gzip (16→100) |\n|---|---|---|---|\n`;
 	for (const v of V) {
 		const s = size[v]; const pb = (a, b2, key) => (s[b2][key] - s[a][key]) / (s[b2].boundaries - s[a].boundaries);
@@ -43,12 +48,15 @@ if (size) {
 	}
 }
 
-if (cmp) {
-	md += `\n## Correctness (final state after settle; \`/dpu\`, 27 scenarios)\n\n| variant | chromium | firefox | webkit |\n|---|---|---|---|\n`;
+for (const [mode, cmp] of Object.entries(cmps)) {
+	if (!cmp) continue;
+	md += `\n## Correctness, hydrate=${mode} (${mode === 'off' ? 'stream + polyfill/native only, no client JS' : 'after client hydration; hydration can mask a failed patch'}) — \`/dpu\`, 26 checks + isolated foreignObject page\n\n| variant | chromium | firefox | webkit | foreignObject page (C/F/W) |\n|---|---|---|---|---|\n`;
 	for (const v of Object.keys(cmp)) {
-		md += `| ${v} | ${['chromium', 'firefox', 'webkit'].map(b => { const r = cmp[v].browsers[b]; return r.hung ? 'HUNG' : `${Object.values(r.checks).filter(Boolean).length}/${Object.keys(r.checks).length}`; }).join(' | ')} |\n`;
+		md += `| ${v} | ${['chromium', 'firefox', 'webkit'].map(b => { const r = cmp[v].browsers[b]; return r.hung ? 'HUNG' : `${Object.values(r.checks).filter(Boolean).length}/${Object.keys(r.checks).length}`; }).join(' | ')} | ${['chromium', 'firefox', 'webkit'].map(b => cmp[v].browsers[b].foreignObject).join(' / ')} |\n`;
 	}
-	md += `\nFailing scenarios: ${[...new Set(Object.entries(cmp).flatMap(([v, x]) => Object.entries(x.browsers).flatMap(([b, r]) => Object.entries(r.checks || {}).filter(([, ok]) => !ok).map(([k]) => `${k} (${v}/${b})`))))].slice(0, 12).join(', ') || 'none'}\n`;
+	const fails = Object.entries(cmp).flatMap(([v, x]) => Object.entries(x.browsers).flatMap(([b, r]) => Object.entries(r.checks || {}).filter(([, ok]) => !ok).map(([k]) => [k, v, b])));
+	const byScn = {}; for (const [k, v, b] of fails) (byScn[k] ??= []).push(`${v}/${b}`);
+	md += `\nFailing checks: ${Object.entries(byScn).map(([k, l]) => `**${k}** (${l.join(', ')})`).join('; ') || 'none'}\n`;
 }
 writeFileSync('results/DATA.md', md);
 console.log(md);

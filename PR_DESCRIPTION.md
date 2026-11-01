@@ -8,7 +8,7 @@ polyfill elsewhere. Fixes boundaries inside `<svg>` / `<math>` being inserted in
 
 ## Evidence
 See the comparison report: <link to eco-ci REPORT.md>. In short (Chromium, Firefox, WebKit; 27 scenarios):
-- Correctness: 27/27 vs 25/27 on `main` (SVG and MathML namespace).
+- Correctness (stream only): 26/26 vs 23/26 on `main` (`table-rows`, SVG, MathML namespace). Also fixes a `foreignObject` hang and a lost-last-boundary race that PR #474 as opened shows in Firefox/WebKit.
 - Timing: no measurable penalty up to 100 boundaries (patch lag within ~±15 ms; resolution-limited).
 - Payload: ≈ +5 B gzip per boundary.
 - Not solved: strict-CSP pages in browsers without native DPU (inline scripts carry no nonce).

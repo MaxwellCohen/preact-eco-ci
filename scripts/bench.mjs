@@ -7,7 +7,7 @@ const [bn, runsArg, ...rest] = process.argv.slice(2);
 const bt = { chromium, firefox, webkit }[bn];
 const RUNS = Number(runsArg || 5);
 const versions = JSON.parse(readFileSync('versions.json', 'utf8'));
-const variants = rest.length ? rest : ['baseline', 'dpu-end-stamp', 'dpu-support-react-style'];
+const variants = rest.length ? rest : ['baseline', 'pr474', 'local-end-stamp', 'local-react-style'];
 const host = v => `https://preact-eco-${v}.to-email-max.workers.dev`;
 
 const POPCORN = [420, 1680, 780, 2100, 1100, 540, 1900, 1320, 2260, 860, 1480, 640, 1980, 980, 1200, 1540];
@@ -80,9 +80,13 @@ function patchLag(r, prefix, delays) {
 
 const out = { browser: bn, runs: RUNS, variants: {} };
 const browser = await bt.launch();
-for (const v of variants) {
-	const o = (out.variants[v] = { popcorn: [], many: [], grid: [], interactive: { late: [], early: [] }, csp: null });
-	for (let i = 0; i < RUNS; i++) {
+for (const v of variants) out.variants[v] = { popcorn: [], many: [], grid: [], interactive: { late: [], early: [] }, csp: null };
+const shuffle = a => a.map(x => [Math.random(), x]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
+// Interleaved: every iteration visits all variants in a fresh random order, so time-of-day / cold-start effects
+// are spread across variants instead of being confounded with one of them.
+for (let i = 0; i < RUNS; i++) {
+	for (const v of shuffle(variants)) {
+		const o = out.variants[v];
 		for (const [key, path, prefix, delays] of [['popcorn', '/s/popcorning', 'popcorn', POPCORN], ['many', '/s/many-boundaries', 'many-grid', MANY], ['grid', '/s/grid-100', 'grid-100', GRID]]) {
 			const r = await load(browser, host(v) + path, Math.max(...delays) + 1800);
 			if (!r) { o[key].push({ hung: true }); continue; }
@@ -95,10 +99,12 @@ for (const v of variants) {
 			const r = await load(browser, `${host(v)}/s/patch-interactive?hydrate=${mode}`, 3500);
 			o.interactive[mode].push(r && r.m.btnVis != null ? { visible: r.m.btnVis, live: r.m.btnLive, gap: r.m.btnLive == null ? null : r.m.btnLive - r.m.btnVis, hydrated: r.hydrated } : { hung: !r });
 		}
-		console.error(`${bn} ${v} run ${i + 1}/${RUNS}`);
 	}
+	console.error(`${bn} iteration ${i + 1}/${RUNS}`);
+}
+for (const v of variants) {
 	const c = await load(browser, `${host(v)}/dpu?csp=strict`, 10000);
-	o.csp = c && { leftoverTpl: c.leftoverTpl, leftoverFb: c.leftoverFb, errors: c.errors.length };
+	out.variants[v].csp = c && { leftoverTpl: c.leftoverTpl, leftoverFb: c.leftoverFb, errors: c.errors.length };
 }
 await browser.close();
 mkdirSync('results', { recursive: true });

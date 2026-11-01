@@ -2,7 +2,7 @@
 
 Evidence for choosing how `preact-render-to-string` should stream Suspense completions with
 [Declarative Partial Updates](https://developer.chrome.com/blog/declarative-partial-updates) (DPU).
-Everything here is reproducible from this repo; full tables are in [`results/DATA.md`](./results/DATA.md).
+Everything here is reproducible from this repo (except the two `local-*` variants, which are built from unpushed local commits); full tables are in [`results/DATA.md`](./results/DATA.md).
 
 > **Made with LLMs.** The test pages, scripts, measurements harness and this write-up were produced with
 > Claude (Anthropic) via Claude Code, directed by the repo owner. Expectations encoded in the scenarios are
@@ -10,107 +10,110 @@ Everything here is reproducible from this repo; full tables are in [`results/DAT
 
 ## What was compared
 
-| variant | `preact-render-to-string` | `preact` | completion format |
-|---|---|---|---|
-| `baseline` | upstream `main` (`dc7d06b`) | upstream `main` | `<preact-island>` custom element + inline client script |
-| `dpu-end-stamp` | fork branch `dpu-end-stamp` | fork `main` | `<template for="id">…</template><!--$p:id-->`; one inline MutationObserver polyfill |
-| `dpu-support-react-style` | fork branch `dpu-support-react-style` | fork `main` | `<template for="id">…</template><script>$RC("id")</script>`; one inline `window.$RC` init script |
-| `main-fork-preact` *(control)* | upstream `main` | fork `main` | same as baseline — used to prove `preact` version differences do not explain results |
+| variant | `preact-render-to-string` | completion format |
+|---|---|---|
+| `baseline` (= `main`) | upstream `main` `dc7d06b` | `<preact-island>` custom element + inline client script |
+| `pr474` | [PR #474](https://github.com/preactjs/preact-render-to-string/pull/474) head `6a02913` | `<template for>` + `<?start>/<?end>` markers, MutationObserver polyfill |
+| `local-end-stamp` | local `dpu-end-stamp` `3fb6f11` (**unpushed**; rebased on current `main`, not stacked on the PR branch) | `<template for>` + `<!--$p:id-->` end stamp, hydration + SVG handling |
+| `local-react-style` | local `dpu-support-react-style` `c1cdbac` (**unpushed**, differs from the pushed commit) | `<template for>` + `<script>$RC("id")</script>` per chunk, one `window.$RC` init script |
 
-The control scored identically to `baseline` on every correctness check, so the differences below come from the
-`preact-render-to-string` change.
+All use the same `preact` (`MaxwellCohen/preact` `main` `921df34`) and the same demo app, deployed as separate
+Cloudflare Workers. A control (upstream `main` + the fork's `preact`) matched `baseline` on every correctness check,
+so differences come from the `preact-render-to-string` change.
 
 ## Headline results
 
-| question | baseline | dpu-end-stamp | dpu-support-react-style |
-|---|---|---|---|
-| Correct final DOM (27 scenarios × Chromium/Firefox/WebKit) | 25/27 | **27/27** | **27/27** |
-| SVG / MathML boundary lands in the right namespace | ❌ | ✅ | ✅ |
-| Patch lag vs. server resolve time (16–100 boundaries) | within ~±15 ms, Firefox ~20–30 ms | within ~±15 ms, Firefox ~11–15 ms | within ~±15 ms, Firefox ≈0 ms |
-| Patched content → interactive (client script after stream / mid-stream) | ~110–130 ms / ~11–17 ms | ~93–137 ms / ~11–16 ms | ~95–121 ms / ~11–21 ms |
-| Extra gzip bytes per boundary vs baseline (est.) | – | +5.5 B | +5.3 B |
-| Extra raw bytes per boundary vs baseline | – | +12.5 B | +24.8 B |
-| Fixed overhead (raw, first boundary) | 1322 B | 1250 B | **885 B** |
-| Strict CSP (no nonce on stream scripts), Chromium | fallbacks stay (16) | **works** (native) | **works** (native) |
-| Strict CSP, Firefox / WebKit | fallbacks stay (16) | **112 templates unapplied** | **112 templates unapplied** |
-| Main-thread stall / page errors | none | none | none |
+| question | main | PR #474 | local end-stamp | local react-style |
+|---|---|---|---|---|
+| Correct final DOM, stream only (`hydrate=off`), 26 checks × 3 browsers | 23/26 | 26/26 | 26/26 | 26/26 |
+| What `main` fails | `table-rows`, `svg-namespace`, `mathml-namespace` | – | – | – |
+| `<svg><foreignObject>` boundary | ok | **hangs the main thread (all 3 browsers)** | ok | ok |
+| Last-resolving boundary shown when hydration starts right after the stream (Firefox, WebKit) | ok | **lost in every run** (cell 8 of 16; cell 97 of 100) | ok | ok |
+| Patch lag in Firefox (median over 16/60/100 boundaries) | 21–34 ms | 13–134 ms (includes the lost boundary) | 9–14 ms | −7…4 ms |
+| Patch lag in Chromium / WebKit | ≈0–10 ms | ≈0–10 ms (WebKit: lost boundary) | ≈0–5 ms | ≈0–11 ms |
+| Fixed overhead, first boundary (raw) | 1322 B | 1278 B | 1390 B | **885 B** |
+| Per boundary, raw / gzip (est.) | 107.0 / 14.6 B | 107.9 / 17.4 B | 120.2 / 20.4 B | 131.8 / 19.9 B |
+| Strict CSP, Chromium | fallbacks stay | works (native) | works (native) | works (native) |
+| Strict CSP, Firefox / WebKit | fallbacks stay | 112 templates unapplied | 112 unapplied | 112 unapplied |
+| Page errors / main-thread stalls >50 ms | none | none (except the hang above) | none | none |
 
 ### What the data supports
 
-1. **Either DPU design fixes a real correctness gap in `main`.** A Suspense boundary inside `<svg>` or `<math>` is
-   inserted in the HTML namespace with `<preact-island>` (circle does not paint, MathML is not MathML). Both DPU
-   branches handle it in all three browsers.
-2. **No measurable timing penalty at ≤100 boundaries.** Patch lag differences in Chromium and WebKit are inside the
-   measurement resolution (~16 ms scan interval). In Firefox, where the polyfill path runs, both DPU variants were
-   at or below `baseline`; `dpu-support-react-style` was lowest. No long tasks, no stalls above ~20 ms, no page errors.
-3. **Payload cost is small and similar.** About +5 B gzip per boundary for both DPU variants. In raw bytes
-   `dpu-support-react-style` is larger per boundary (the per-chunk `<script>$RC(id)</script>` tags) but cheaper to
-   start (smaller init script): it is larger than `main` once a page has more than roughly 18 boundaries (raw).
-4. **Strict CSP is the real differentiator and neither design solves it.** Where the browser does not support DPU
-   natively (Firefox, WebKit in these runs), both designs depend on inline scripts that carry no nonce, so a
-   `script-src 'nonce-…'` page is left with unapplied templates. `main` has the same limitation for its client
-   script. Chromium handles `<template for>` natively, so no script is needed there.
+1. **Any DPU variant fixes real `main` problems.** Without client JS, `main` also fails `table-rows` (rows inserted
+   into a `<tbody>`), and puts SVG/MathML boundaries in the HTML namespace. Hydration masks `table-rows` but not the
+   namespace cases.
+2. **PR #474 as opened has two defects the local end-stamp work resolves**, both reproducible on the live pages:
+   (a) a boundary inside `<svg><foreignObject>` freezes the page in Chromium, Firefox and WebKit; (b) in Firefox and
+   WebKit the last streamed boundary is missing when hydration runs right after the stream ends. It applies fine with
+   `hydrate=off`, so this looks like a race between the final patch and hydration/observer teardown *(hypothesis; not
+   root-caused)*.
+3. **No timing penalty otherwise.** Patch lag for `local-end-stamp` and `local-react-style` is at or below `main` in
+   every browser (interleaved runs, 5 per cell). Differences under ~16 ms are noise.
+4. **Payload cost is small:** +3 to +6 B gzip per boundary vs `main`. `local-react-style` has the smallest fixed cost
+   but the largest per-boundary raw cost (extra `<script>` per chunk).
+5. **Strict CSP is unsolved by all of them** in browsers without native DPU (Firefox, WebKit here): inline scripts
+   carry no nonce.
 
-### Where the designs differ (from the emitted HTML, not from benchmarks)
+### The end stamp and "just use a newline"
 
-- **Polyfill trigger.** `dpu-end-stamp` uses one `MutationObserver` over the document that disconnects after load;
-  `dpu-support-react-style` runs an explicit `$RC(id)` call per chunk and removes each script after it runs.
-- **Per-chunk markup.** `react-style` adds a `<script>` element per chunk (more DOM churn, easier to reason about);
-  `end-stamp` adds only a comment node.
-- **Global surface.** `react-style` defines `window.$RC`. *Hypothesis:* this name matches React Fizz's runtime global
-  and could collide on a page that mixes both; not tested.
-- **Native-vs-polyfill observability.** With `$RC` you can tell, per chunk, whether the browser already consumed
-  the template natively (see the `/dpu` diagnostics page); `end-stamp` has no per-chunk hook.
+Measured on the real `local-end-stamp` output (60 boundaries, gzip level 9): the current `<!--$p:-19321-->` stamp
+costs 16 raw / 3.55 gzip bytes per boundary; a single `\n` costs 1 raw / 0.12 gzip; no stamp costs 0. The comment's
+gzip cost is almost entirely the unique id (constant id ⇒ 0.32 B). So a newline would save ≈15 raw / ≈3.4 gzip bytes
+per boundary (≈780 B raw, ≈200 B gzip on 60 boundaries; ≈1.1 KB raw, ≈300 B gzip on 85 stamps in the 100-cell page).
+**Caveat:** the stamp's id is what ties it to a boundary. A bare newline carries no id, so the client would have to
+infer the boundary by position. That has not been built or tested; this is a size projection only.
+
+### Where the designs differ (from the emitted HTML, not benchmarks)
+
+- **Trigger.** PR #474 / end-stamp: one `MutationObserver`; react-style: an explicit `$RC(id)` call per chunk, the
+  script removes itself after running.
+- **Per-chunk markup.** react-style adds a `<script>` per chunk; end-stamp adds a comment.
+- **Global.** react-style defines `window.$RC` *(hypothesis: collides with React Fizz's global on mixed pages; untested)*.
+- **Observability.** `$RC` lets the harness see per chunk whether the browser already consumed the template natively.
 
 ## Method
 
-- Variants are built from pinned repo/ref pairs in [`versions.json`](./versions.json) and deployed as separate
-  Cloudflare Workers (`preact-eco-<variant>`); the same demo app and scenarios run on each.
-- **Correctness** (`scripts/compare.mjs`): 27 scenarios on `/dpu`, final state after a 14 s settle, Playwright
-  Chromium, Firefox and WebKit.
-- **Timing** (`scripts/bench.mjs`): 5 runs per cell, fresh browser context per load. A `MutationObserver` plus a 16 ms
-  scan records when each cell becomes laid out. *Patch lag* = visible − (responseStart + known server delay).
-  Scenarios: popcorning (16 boundaries), many-boundaries (60), grid-100 (100), patched-counter interactivity with
-  hydration `late` (script after stream) and `early` (async script mid-stream).
-- **Payload** (`scripts/size.mjs`): raw bytes of the HTML stream; gzip/brotli are **estimated** by compressing the
-  decoded stream locally, not measured on the wire.
-- **CSP**: `?csp=strict` serves `script-src 'self' 'nonce-…'` with nonces only on the harness's own scripts.
+- Variants are pinned in [`versions.json`](./versions.json) (+ untracked `versions.local.json` for local checkouts) and
+  built by `scripts/build-variant.mjs` (read-only clones, pack, build). Same demo app for every variant.
+- **Correctness** (`scripts/compare.mjs`, `HYDRATE=off|late`): 26 checks on `/dpu` (14 s settle) plus an isolated
+  `foreignObject` page, in Playwright Chromium, Firefox and WebKit. `hydrate=off` judges the stream/polyfill alone;
+  `late` runs after client hydration and can hide a failed patch.
+- **Timing** (`scripts/bench.mjs`): 5 iterations; each iteration visits every variant in a fresh random order
+  (interleaved, fixes the order confound of the first report). *Patch lag* = visible − (responseStart + server delay),
+  observed via MutationObserver plus a 16 ms layout scan. Scenarios: popcorning (16), many-boundaries (60), grid-100
+  (100), and patched-counter interactivity with hydration `late`/`early`.
+- **Payload** (`scripts/size.mjs`): raw bytes; gzip/brotli are **estimates** (decoded stream compressed locally).
+- **CSP**: `?csp=strict` → `script-src 'self' 'nonce-…'`, nonces only on harness scripts.
 
-## Limitations — read before relying on any number
+## Limitations
 
-- One machine, one network path, Cloudflare edge as seen from there, single day. Not a lab.
-- Variants were benchmarked sequentially (all `baseline` runs, then the next variant), so **TTFB/FCP/LCP
-  differences between variants (~100 ms in places) are confounded with time/cold-start and should be ignored.**
-  Patch lag is relative to each page's own `responseStart` and is more robust. Interleaving runs would fix this.
-- Timing resolution is ~16 ms; sub-16 ms differences are noise.
-- Chromium in Playwright handled `<template for>` natively, so Chromium numbers measure the native path; Firefox
-  and WebKit measure the polyfill path. Native support may differ across Chrome versions/flags.
-- Not measured: CPU/memory on low-end devices, throttled networks, real compressed wire size, very large pages
-  (>100 boundaries), hydration cost with DPU, back/forward cache, streaming through proxies that buffer.
-- The final-state correctness checks do not capture intermediate states (flashes, ordering).
-- Known issues seen in other implementations (e.g. a `foreignObject` hang in a separate playground) did **not**
-  reproduce on these variants; that playground used a different completion script.
+- One machine/network/day. Timing resolution ≈16 ms. Chromium handled `<template for>` natively (native path);
+  Firefox/WebKit exercised the polyfills.
+- Not measured: low-end CPU/memory, throttled networks, real wire compression, >100 boundaries, bfcache, buffering
+  proxies, intermediate visual states.
+- `local-*` variants are unpushed commits; SHAs are recorded above and in each page's `/index.json`. To reproduce,
+  push those commits (or point `versions.local.json` at your checkout).
+- The cause of the PR #474 last-boundary loss and of the `foreignObject` hang were not investigated beyond isolating
+  them to the stream format/polyfill; both are reproducible with `/s/popcorning` (Firefox/WebKit) and
+  `/s/foreign-object`.
 
 ## Reproduce
 
 ```bash
 npm install
-node scripts/build-variant.mjs <variant>      # clone pinned refs read-only, pack, build the demo
-cd .build/<variant> && npx wrangler deploy    # or run `npx wrangler dev`
-node scripts/compare.mjs                      # correctness matrix  -> results/compare.md
-node scripts/bench.mjs chromium 5             # timing (repeat for firefox, webkit)
-node scripts/size.mjs                         # payload             -> results/size.json
-node scripts/report.mjs                       # tables              -> results/DATA.md
+node scripts/build-variant.mjs <variant> && (cd .build/<variant> && npx wrangler deploy)
+HYDRATE=off node scripts/compare.mjs <variants…>   # also HYDRATE=late
+node scripts/bench.mjs chromium 5                   # also firefox, webkit
+node scripts/size.mjs <variants…> && node scripts/report.mjs
+node scripts/build-index.mjs && (cd .build/index && npx wrangler deploy)   # landing page
 ```
 
-Live pages (each variant): `/` all 54 scenarios with selection controls, `/dpu` diagnostics + curated set,
-`/dpu?csp=strict`, `/s/<id>` single scenario, `/index.json` scenario list.
+Live pages per variant: `/` (54 scenarios + selection controls), `/dpu` (diagnostics), `/dpu?csp=strict`,
+`/s/<id>`, `/index.json`. Landing page: https://preact-eco-index.to-email-max.workers.dev
 
-## Decision guide (interpretation, not measurement)
+## Decision guide (interpretation)
 
-- If the priority is **correctness and parity with the DPU spec**, both branches meet it equally; `main` does not.
-- If the priority is **smallest steady cost on long pages**, `dpu-end-stamp` (comment stamp, no per-chunk script).
-- If the priority is **small fixed cost, per-chunk observability, and explicit control flow**,
-  `dpu-support-react-style`.
-- If the priority is **strict-CSP sites**, neither is sufficient yet in non-native browsers; a nonce hook or a
-  non-inline fallback would be the next piece of work regardless of which design is chosen.
+- Parity with the DPU spec and no hangs: `local-end-stamp` and `local-react-style` meet it equally; PR #474 as opened does not.
+- Smallest per-boundary cost: end-stamp (comment, or a newline if id-less matching proves feasible).
+- Smallest fixed cost, explicit control flow, per-chunk observability: react-style.
+- Strict-CSP sites: none is sufficient in non-native browsers; a nonce hook or non-inline fallback is separate work.

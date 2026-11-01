@@ -2,8 +2,8 @@
   "baseline": {
     "net": {
       "bytes": 64713,
-      "firstChunkMs": 184,
-      "totalMs": 2671
+      "firstChunkMs": 156,
+      "totalMs": 2668
     },
     "browsers": {
       "chromium": {
@@ -12,13 +12,12 @@
           "popcorning": true,
           "nested": true,
           "out-of-order": true,
-          "table-rows": true,
+          "table-rows": false,
           "select-options": true,
           "list-items": true,
           "svg-namespace": false,
           "mathml-namespace": false,
           "style-hoist": true,
-          "foreign-object": true,
           "inline-script": true,
           "empty": true,
           "multi-root": true,
@@ -42,12 +41,151 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 17
+          "maxGap": 3
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
         "preactIslands": 0,
-        "errors": []
+        "errors": [],
+        "foreignObject": "ok"
+      },
+      "firefox": {
+        "checks": {
+          "html-baseline": true,
+          "popcorning": true,
+          "nested": true,
+          "out-of-order": true,
+          "table-rows": false,
+          "select-options": true,
+          "list-items": true,
+          "svg-namespace": false,
+          "mathml-namespace": false,
+          "style-hoist": true,
+          "inline-script": true,
+          "empty": true,
+          "multi-root": true,
+          "text-only": true,
+          "nested-template": true,
+          "link-stylesheet": true,
+          "iframe-srcdoc": true,
+          "big-boundary": true,
+          "patch-interactive": true,
+          "client-wins": true,
+          "adjacent-boundaries": true,
+          "nested-inner-first": true,
+          "many-boundaries": true,
+          "zero-delay": true,
+          "deep-nesting": true,
+          "reverse-order": true
+        },
+        "rc": {
+          "inits": 0,
+          "calls": 0,
+          "native": 0,
+          "polyfill": 0,
+          "errors": 0,
+          "maxGap": 12
+        },
+        "leftoverTemplates": 0,
+        "leftoverFallbacks": 0,
+        "preactIslands": 0,
+        "errors": [],
+        "foreignObject": "ok"
+      },
+      "webkit": {
+        "checks": {
+          "html-baseline": true,
+          "popcorning": true,
+          "nested": true,
+          "out-of-order": true,
+          "table-rows": false,
+          "select-options": true,
+          "list-items": true,
+          "svg-namespace": false,
+          "mathml-namespace": false,
+          "style-hoist": true,
+          "inline-script": true,
+          "empty": true,
+          "multi-root": true,
+          "text-only": true,
+          "nested-template": true,
+          "link-stylesheet": true,
+          "iframe-srcdoc": true,
+          "big-boundary": true,
+          "patch-interactive": true,
+          "client-wins": true,
+          "adjacent-boundaries": true,
+          "nested-inner-first": true,
+          "many-boundaries": true,
+          "zero-delay": true,
+          "deep-nesting": true,
+          "reverse-order": true
+        },
+        "rc": {
+          "inits": 0,
+          "calls": 0,
+          "native": 0,
+          "polyfill": 0,
+          "errors": 0,
+          "maxGap": 11
+        },
+        "leftoverTemplates": 0,
+        "leftoverFallbacks": 0,
+        "preactIslands": 0,
+        "errors": [],
+        "foreignObject": "ok"
+      }
+    }
+  },
+  "pr474": {
+    "net": {
+      "bytes": 64844,
+      "firstChunkMs": 211,
+      "totalMs": 2694
+    },
+    "browsers": {
+      "chromium": {
+        "checks": {
+          "html-baseline": true,
+          "popcorning": true,
+          "nested": true,
+          "out-of-order": true,
+          "table-rows": true,
+          "select-options": true,
+          "list-items": true,
+          "svg-namespace": true,
+          "mathml-namespace": true,
+          "style-hoist": true,
+          "inline-script": true,
+          "empty": true,
+          "multi-root": true,
+          "text-only": true,
+          "nested-template": true,
+          "link-stylesheet": true,
+          "iframe-srcdoc": true,
+          "big-boundary": true,
+          "patch-interactive": true,
+          "client-wins": true,
+          "adjacent-boundaries": true,
+          "nested-inner-first": true,
+          "many-boundaries": true,
+          "zero-delay": true,
+          "deep-nesting": true,
+          "reverse-order": true
+        },
+        "rc": {
+          "inits": 0,
+          "calls": 0,
+          "native": 0,
+          "polyfill": 0,
+          "errors": 0,
+          "maxGap": 3
+        },
+        "leftoverTemplates": 0,
+        "leftoverFallbacks": 0,
+        "preactIslands": 0,
+        "errors": [],
+        "foreignObject": "HUNG"
       },
       "firefox": {
         "checks": {
@@ -58,10 +196,9 @@
           "table-rows": true,
           "select-options": true,
           "list-items": true,
-          "svg-namespace": false,
-          "mathml-namespace": false,
+          "svg-namespace": true,
+          "mathml-namespace": true,
           "style-hoist": true,
-          "foreign-object": true,
           "inline-script": true,
           "empty": true,
           "multi-root": true,
@@ -90,7 +227,8 @@
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
         "preactIslands": 0,
-        "errors": []
+        "errors": [],
+        "foreignObject": "HUNG"
       },
       "webkit": {
         "checks": {
@@ -101,10 +239,9 @@
           "table-rows": true,
           "select-options": true,
           "list-items": true,
-          "svg-namespace": false,
-          "mathml-namespace": false,
+          "svg-namespace": true,
+          "mathml-namespace": true,
           "style-hoist": true,
-          "foreign-object": true,
           "inline-script": true,
           "empty": true,
           "multi-root": true,
@@ -128,158 +265,21 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 7
+          "maxGap": 6
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
         "preactIslands": 0,
-        "errors": []
+        "errors": [],
+        "foreignObject": "HUNG"
       }
     }
   },
-  "main-fork-preact": {
+  "local-end-stamp": {
     "net": {
-      "bytes": 64750,
-      "firstChunkMs": 220,
-      "totalMs": 2698
-    },
-    "browsers": {
-      "chromium": {
-        "checks": {
-          "html-baseline": true,
-          "popcorning": true,
-          "nested": true,
-          "out-of-order": true,
-          "table-rows": true,
-          "select-options": true,
-          "list-items": true,
-          "svg-namespace": false,
-          "mathml-namespace": false,
-          "style-hoist": true,
-          "foreign-object": true,
-          "inline-script": true,
-          "empty": true,
-          "multi-root": true,
-          "text-only": true,
-          "nested-template": true,
-          "link-stylesheet": true,
-          "iframe-srcdoc": true,
-          "big-boundary": true,
-          "patch-interactive": true,
-          "client-wins": true,
-          "adjacent-boundaries": true,
-          "nested-inner-first": true,
-          "many-boundaries": true,
-          "zero-delay": true,
-          "deep-nesting": true,
-          "reverse-order": true
-        },
-        "rc": {
-          "inits": 0,
-          "calls": 0,
-          "native": 0,
-          "polyfill": 0,
-          "errors": 0,
-          "maxGap": 21
-        },
-        "leftoverTemplates": 0,
-        "leftoverFallbacks": 0,
-        "preactIslands": 0,
-        "errors": []
-      },
-      "firefox": {
-        "checks": {
-          "html-baseline": true,
-          "popcorning": true,
-          "nested": true,
-          "out-of-order": true,
-          "table-rows": true,
-          "select-options": true,
-          "list-items": true,
-          "svg-namespace": false,
-          "mathml-namespace": false,
-          "style-hoist": true,
-          "foreign-object": true,
-          "inline-script": true,
-          "empty": true,
-          "multi-root": true,
-          "text-only": true,
-          "nested-template": true,
-          "link-stylesheet": true,
-          "iframe-srcdoc": true,
-          "big-boundary": true,
-          "patch-interactive": true,
-          "client-wins": true,
-          "adjacent-boundaries": true,
-          "nested-inner-first": true,
-          "many-boundaries": true,
-          "zero-delay": true,
-          "deep-nesting": true,
-          "reverse-order": true
-        },
-        "rc": {
-          "inits": 0,
-          "calls": 0,
-          "native": 0,
-          "polyfill": 0,
-          "errors": 0,
-          "maxGap": 18
-        },
-        "leftoverTemplates": 0,
-        "leftoverFallbacks": 0,
-        "preactIslands": 0,
-        "errors": []
-      },
-      "webkit": {
-        "checks": {
-          "html-baseline": true,
-          "popcorning": true,
-          "nested": true,
-          "out-of-order": true,
-          "table-rows": true,
-          "select-options": true,
-          "list-items": true,
-          "svg-namespace": false,
-          "mathml-namespace": false,
-          "style-hoist": true,
-          "foreign-object": true,
-          "inline-script": true,
-          "empty": true,
-          "multi-root": true,
-          "text-only": true,
-          "nested-template": true,
-          "link-stylesheet": true,
-          "iframe-srcdoc": true,
-          "big-boundary": true,
-          "patch-interactive": true,
-          "client-wins": true,
-          "adjacent-boundaries": true,
-          "nested-inner-first": true,
-          "many-boundaries": true,
-          "zero-delay": true,
-          "deep-nesting": true,
-          "reverse-order": true
-        },
-        "rc": {
-          "inits": 0,
-          "calls": 0,
-          "native": 0,
-          "polyfill": 0,
-          "errors": 0,
-          "maxGap": 14
-        },
-        "leftoverTemplates": 0,
-        "leftoverFallbacks": 0,
-        "preactIslands": 0,
-        "errors": []
-      }
-    }
-  },
-  "dpu-end-stamp": {
-    "net": {
-      "bytes": 66376,
-      "firstChunkMs": 210,
-      "totalMs": 2690
+      "bytes": 66556,
+      "firstChunkMs": 200,
+      "totalMs": 2684
     },
     "browsers": {
       "chromium": {
@@ -294,7 +294,6 @@
           "svg-namespace": true,
           "mathml-namespace": true,
           "style-hoist": true,
-          "foreign-object": true,
           "inline-script": true,
           "empty": true,
           "multi-root": true,
@@ -316,6 +315,144 @@
           "inits": 0,
           "calls": 0,
           "native": 0,
+          "polyfill": 0,
+          "errors": 0,
+          "maxGap": 8
+        },
+        "leftoverTemplates": 0,
+        "leftoverFallbacks": 0,
+        "preactIslands": 0,
+        "errors": [],
+        "foreignObject": "ok"
+      },
+      "firefox": {
+        "checks": {
+          "html-baseline": true,
+          "popcorning": true,
+          "nested": true,
+          "out-of-order": true,
+          "table-rows": true,
+          "select-options": true,
+          "list-items": true,
+          "svg-namespace": true,
+          "mathml-namespace": true,
+          "style-hoist": true,
+          "inline-script": true,
+          "empty": true,
+          "multi-root": true,
+          "text-only": true,
+          "nested-template": true,
+          "link-stylesheet": true,
+          "iframe-srcdoc": true,
+          "big-boundary": true,
+          "patch-interactive": true,
+          "client-wins": true,
+          "adjacent-boundaries": true,
+          "nested-inner-first": true,
+          "many-boundaries": true,
+          "zero-delay": true,
+          "deep-nesting": true,
+          "reverse-order": true
+        },
+        "rc": {
+          "inits": 0,
+          "calls": 0,
+          "native": 0,
+          "polyfill": 0,
+          "errors": 0,
+          "maxGap": 127
+        },
+        "leftoverTemplates": 0,
+        "leftoverFallbacks": 0,
+        "preactIslands": 0,
+        "errors": [],
+        "foreignObject": "ok"
+      },
+      "webkit": {
+        "checks": {
+          "html-baseline": true,
+          "popcorning": true,
+          "nested": true,
+          "out-of-order": true,
+          "table-rows": true,
+          "select-options": true,
+          "list-items": true,
+          "svg-namespace": true,
+          "mathml-namespace": true,
+          "style-hoist": true,
+          "inline-script": true,
+          "empty": true,
+          "multi-root": true,
+          "text-only": true,
+          "nested-template": true,
+          "link-stylesheet": true,
+          "iframe-srcdoc": true,
+          "big-boundary": true,
+          "patch-interactive": true,
+          "client-wins": true,
+          "adjacent-boundaries": true,
+          "nested-inner-first": true,
+          "many-boundaries": true,
+          "zero-delay": true,
+          "deep-nesting": true,
+          "reverse-order": true
+        },
+        "rc": {
+          "inits": 0,
+          "calls": 0,
+          "native": 0,
+          "polyfill": 0,
+          "errors": 0,
+          "maxGap": 6
+        },
+        "leftoverTemplates": 0,
+        "leftoverFallbacks": 0,
+        "preactIslands": 0,
+        "errors": [],
+        "foreignObject": "ok"
+      }
+    }
+  },
+  "local-react-style": {
+    "net": {
+      "bytes": 67742,
+      "firstChunkMs": 169,
+      "totalMs": 2659
+    },
+    "browsers": {
+      "chromium": {
+        "checks": {
+          "html-baseline": true,
+          "popcorning": true,
+          "nested": true,
+          "out-of-order": true,
+          "table-rows": true,
+          "select-options": true,
+          "list-items": true,
+          "svg-namespace": true,
+          "mathml-namespace": true,
+          "style-hoist": true,
+          "inline-script": true,
+          "empty": true,
+          "multi-root": true,
+          "text-only": true,
+          "nested-template": true,
+          "link-stylesheet": true,
+          "iframe-srcdoc": true,
+          "big-boundary": true,
+          "patch-interactive": true,
+          "client-wins": true,
+          "adjacent-boundaries": true,
+          "nested-inner-first": true,
+          "many-boundaries": true,
+          "zero-delay": true,
+          "deep-nesting": true,
+          "reverse-order": true
+        },
+        "rc": {
+          "inits": 1,
+          "calls": 111,
+          "native": 111,
           "polyfill": 0,
           "errors": 0,
           "maxGap": 2
@@ -323,7 +460,8 @@
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
         "preactIslands": 0,
-        "errors": []
+        "errors": [],
+        "foreignObject": "ok"
       },
       "firefox": {
         "checks": {
@@ -337,7 +475,6 @@
           "svg-namespace": true,
           "mathml-namespace": true,
           "style-hoist": true,
-          "foreign-object": true,
           "inline-script": true,
           "empty": true,
           "multi-root": true,
@@ -356,17 +493,18 @@
           "reverse-order": true
         },
         "rc": {
-          "inits": 0,
-          "calls": 0,
+          "inits": 1,
+          "calls": 111,
           "native": 0,
-          "polyfill": 0,
+          "polyfill": 111,
           "errors": 0,
-          "maxGap": 18
+          "maxGap": 39
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
         "preactIslands": 0,
-        "errors": []
+        "errors": [],
+        "foreignObject": "ok"
       },
       "webkit": {
         "checks": {
@@ -380,59 +518,6 @@
           "svg-namespace": true,
           "mathml-namespace": true,
           "style-hoist": true,
-          "foreign-object": true,
-          "inline-script": true,
-          "empty": true,
-          "multi-root": true,
-          "text-only": true,
-          "nested-template": true,
-          "link-stylesheet": true,
-          "iframe-srcdoc": true,
-          "big-boundary": true,
-          "patch-interactive": true,
-          "client-wins": true,
-          "adjacent-boundaries": true,
-          "nested-inner-first": true,
-          "many-boundaries": true,
-          "zero-delay": true,
-          "deep-nesting": true,
-          "reverse-order": true
-        },
-        "rc": {
-          "inits": 0,
-          "calls": 0,
-          "native": 0,
-          "polyfill": 0,
-          "errors": 0,
-          "maxGap": 10
-        },
-        "leftoverTemplates": 0,
-        "leftoverFallbacks": 0,
-        "preactIslands": 0,
-        "errors": []
-      }
-    }
-  },
-  "dpu-support-react-style": {
-    "net": {
-      "bytes": 67726,
-      "firstChunkMs": 239,
-      "totalMs": 2705
-    },
-    "browsers": {
-      "chromium": {
-        "checks": {
-          "html-baseline": true,
-          "popcorning": true,
-          "nested": true,
-          "out-of-order": true,
-          "table-rows": true,
-          "select-options": true,
-          "list-items": true,
-          "svg-namespace": true,
-          "mathml-namespace": true,
-          "style-hoist": true,
-          "foreign-object": true,
           "inline-script": true,
           "empty": true,
           "multi-root": true,
@@ -452,102 +537,17 @@
         },
         "rc": {
           "inits": 1,
-          "calls": 112,
-          "native": 112,
-          "polyfill": 0,
-          "errors": 0,
-          "maxGap": 1
-        },
-        "leftoverTemplates": 0,
-        "leftoverFallbacks": 0,
-        "preactIslands": 0,
-        "errors": []
-      },
-      "firefox": {
-        "checks": {
-          "html-baseline": true,
-          "popcorning": true,
-          "nested": true,
-          "out-of-order": true,
-          "table-rows": true,
-          "select-options": true,
-          "list-items": true,
-          "svg-namespace": true,
-          "mathml-namespace": true,
-          "style-hoist": true,
-          "foreign-object": true,
-          "inline-script": true,
-          "empty": true,
-          "multi-root": true,
-          "text-only": true,
-          "nested-template": true,
-          "link-stylesheet": true,
-          "iframe-srcdoc": true,
-          "big-boundary": true,
-          "patch-interactive": true,
-          "client-wins": true,
-          "adjacent-boundaries": true,
-          "nested-inner-first": true,
-          "many-boundaries": true,
-          "zero-delay": true,
-          "deep-nesting": true,
-          "reverse-order": true
-        },
-        "rc": {
-          "inits": 1,
-          "calls": 112,
+          "calls": 111,
           "native": 0,
-          "polyfill": 112,
+          "polyfill": 111,
           "errors": 0,
-          "maxGap": 85
+          "maxGap": 6
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
         "preactIslands": 0,
-        "errors": []
-      },
-      "webkit": {
-        "checks": {
-          "html-baseline": true,
-          "popcorning": true,
-          "nested": true,
-          "out-of-order": true,
-          "table-rows": true,
-          "select-options": true,
-          "list-items": true,
-          "svg-namespace": true,
-          "mathml-namespace": true,
-          "style-hoist": true,
-          "foreign-object": true,
-          "inline-script": true,
-          "empty": true,
-          "multi-root": true,
-          "text-only": true,
-          "nested-template": true,
-          "link-stylesheet": true,
-          "iframe-srcdoc": true,
-          "big-boundary": true,
-          "patch-interactive": true,
-          "client-wins": true,
-          "adjacent-boundaries": true,
-          "nested-inner-first": true,
-          "many-boundaries": true,
-          "zero-delay": true,
-          "deep-nesting": true,
-          "reverse-order": true
-        },
-        "rc": {
-          "inits": 1,
-          "calls": 112,
-          "native": 0,
-          "polyfill": 112,
-          "errors": 0,
-          "maxGap": 5
-        },
-        "leftoverTemplates": 0,
-        "leftoverFallbacks": 0,
-        "preactIslands": 0,
-        "errors": []
+        "errors": [],
+        "foreignObject": "ok"
       }
     }
   }

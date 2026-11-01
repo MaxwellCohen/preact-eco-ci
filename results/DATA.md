@@ -6,43 +6,52 @@ Patch lag = time a boundary became visible − (responseStart + its server delay
 
 | browser | variant | TTFB | FCP | LCP | patch lag median | patch lag p95 | patch lag max | last visible | longest stall | long-task total | boundaries never shown |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| chromium | baseline | 231 | 268 | 268 | -3 | 11 | 11 | 2491 | 9 | 0 | 0 |
-| chromium | dpu-end-stamp | 140 | 164 | 164 | -1 | 10 | 10 | 2395 | 9 | 0 | 0 |
-| chromium | dpu-support-react-style | 121 | 156 | 156 | -1 | 20 | 20 | 2391 | 9 | 0 | 0 |
-| firefox | baseline | 181 | 252 | 252 | 20 | 34 | 34 | 2452 | 7 | n/a | 0 |
-| firefox | dpu-end-stamp | 126 | 158 | 158 | 15 | 46 | 46 | 2383 | 4 | n/a | 0 |
-| firefox | dpu-support-react-style | 141 | 180 | 180 | -4 | 3 | 3 | 2399 | 8 | n/a | 0 |
-| webkit | baseline | 245 | 314 | 322 | -4 | 43 | 43 | 2470 | 4 | n/a | 0 |
-| webkit | dpu-end-stamp | 109 | 132 | 144 | -3 | 20 | 20 | 2373 | 3 | n/a | 0 |
-| webkit | dpu-support-react-style | 110 | 134 | 161 | -4 | 8 | 8 | 2367 | 6 | n/a | 0 |
+| chromium | baseline | 133 | 156 | 156 | -0 | 32 | 32 | 2394 | 10 | 0 | 0 |
+| chromium | pr474 | 137 | 160 | 160 | -7 | 2 | 2 | 2389 | 9 | 0 | 0 |
+| chromium | local-end-stamp | 152 | 172 | 172 | -2 | 4 | 4 | 2398 | 9 | 0 | 0 |
+| chromium | local-react-style | 126 | 148 | 148 | -4 | 6 | 6 | 2376 | 9 | 0 | 0 |
+| firefox | baseline | 127 | 158 | 158 | 21 | 49 | 49 | 2390 | 6 | n/a | 0 |
+| firefox | pr474 | 126 | 152 | 152 | 134 | 235 | 235 | 2383 | 5 | n/a | 5 |
+| firefox | local-end-stamp | 127 | 158 | 158 | 14 | 40 | 40 | 2378 | 8 | n/a | 0 |
+| firefox | local-react-style | 102 | 138 | 138 | -7 | 22 | 22 | 2359 | 6 | n/a | 0 |
+| webkit | baseline | 132 | 158 | 168 | -1 | 14 | 14 | 2392 | 6 | n/a | 0 |
+| webkit | pr474 | 138 | 160 | 172 | 114 | 209 | 209 | 2386 | 6 | n/a | 5 |
+| webkit | local-end-stamp | 127 | 144 | 152 | -5 | 14 | 14 | 2376 | 6 | n/a | 0 |
+| webkit | local-react-style | 110 | 131 | 141 | -3 | 29 | 29 | 2374 | 6 | n/a | 0 |
 
 ### many-boundaries (60)
 
 | browser | variant | TTFB | FCP | LCP | patch lag median | patch lag p95 | patch lag max | last visible | longest stall | long-task total | boundaries never shown |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| chromium | baseline | 144 | 172 | 172 | 2 | 10 | 14 | 1667 | 9 | 0 | 0 |
-| chromium | dpu-end-stamp | 128 | 152 | 152 | -0 | 6 | 11 | 1643 | 9 | 0 | 0 |
-| chromium | dpu-support-react-style | 140 | 164 | 164 | 1 | 7 | 15 | 1662 | 9 | 0 | 0 |
-| firefox | baseline | 149 | 181 | 181 | 24 | 45 | 60 | 1670 | 19 | n/a | 0 |
-| firefox | dpu-end-stamp | 105 | 134 | 134 | 11 | 24 | 24 | 1622 | 10 | n/a | 0 |
-| firefox | dpu-support-react-style | 126 | 168 | 168 | -6 | 8 | 20 | 1648 | 6 | n/a | 0 |
-| webkit | baseline | 169 | 192 | 260 | 3 | 14 | 21 | 1704 | 7 | n/a | 0 |
-| webkit | dpu-end-stamp | 140 | 173 | 185 | -5 | 0 | 1 | 1656 | 5 | n/a | 0 |
-| webkit | dpu-support-react-style | 120 | 143 | 165 | -7 | 3 | 8 | 1633 | 9 | n/a | 0 |
+| chromium | baseline | 132 | 156 | 156 | -2 | 15 | 22 | 1650 | 9 | 0 | 0 |
+| chromium | pr474 | 135 | 160 | 160 | -2 | 4 | 22 | 1665 | 9 | 0 | 0 |
+| chromium | local-end-stamp | 145 | 168 | 168 | 0 | 6 | 11 | 1668 | 9 | 0 | 0 |
+| chromium | local-react-style | 135 | 156 | 156 | 0 | 6 | 14 | 1659 | 9 | 0 | 0 |
+| firefox | baseline | 138 | 164 | 164 | 28 | 41 | 45 | 1655 | 5 | n/a | 0 |
+| firefox | pr474 | 111 | 144 | 144 | 19 | 81 | 84 | 1633 | 6 | n/a | 5 |
+| firefox | local-end-stamp | 117 | 157 | 157 | 11 | 20 | 22 | 1632 | 12 | n/a | 0 |
+| firefox | local-react-style | 110 | 141 | 141 | -4 | 2 | 13 | 1633 | 5 | n/a | 0 |
+| webkit | baseline | 99 | 118 | 132 | 4 | 14 | 25 | 1625 | 7 | n/a | 0 |
+| webkit | pr474 | 104 | 149 | 157 | 3 | 63 | 70 | 1622 | 6 | n/a | 5 |
+| webkit | local-end-stamp | 132 | 154 | 166 | 0 | 10 | 25 | 1653 | 5 | n/a | 0 |
+| webkit | local-react-style | 149 | 169 | 176 | 2 | 8 | 12 | 1660 | 6 | n/a | 0 |
 
 ### grid-100 (100)
 
 | browser | variant | TTFB | FCP | LCP | patch lag median | patch lag p95 | patch lag max | last visible | longest stall | long-task total | boundaries never shown |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| chromium | baseline | 147 | 176 | 176 | 3 | 13 | 23 | 770 | 9 | 0 | 0 |
-| chromium | dpu-end-stamp | 152 | 176 | 176 | 0 | 6 | 6 | 740 | 9 | 0 | 0 |
-| chromium | dpu-support-react-style | 152 | 172 | 172 | 1 | 8 | 8 | 758 | 9 | 0 | 0 |
-| firefox | baseline | 158 | 201 | 201 | 29 | 51 | 53 | 782 | 3 | n/a | 0 |
-| firefox | dpu-end-stamp | 146 | 185 | 185 | 12 | 16 | 16 | 750 | 4 | n/a | 0 |
-| firefox | dpu-support-react-style | 122 | 161 | 161 | 3 | 14 | 16 | 730 | 5 | n/a | 0 |
-| webkit | baseline | 166 | 192 | 218 | 10 | 25 | 26 | 797 | 13 | n/a | 0 |
-| webkit | dpu-end-stamp | 113 | 135 | 149 | 3 | 11 | 12 | 722 | 4 | n/a | 0 |
-| webkit | dpu-support-react-style | 156 | 194 | 211 | 9 | 28 | 36 | 764 | 11 | n/a | 0 |
+| chromium | baseline | 148 | 180 | 180 | 6 | 15 | 16 | 748 | 9 | 0 | 0 |
+| chromium | pr474 | 112 | 136 | 136 | 4 | 15 | 15 | 717 | 9 | 0 | 0 |
+| chromium | local-end-stamp | 144 | 180 | 180 | 3 | 13 | 13 | 753 | 9 | 0 | 0 |
+| chromium | local-react-style | 167 | 192 | 192 | 3 | 9 | 10 | 772 | 9 | 0 | 0 |
+| firefox | baseline | 118 | 148 | 148 | 34 | 42 | 46 | 732 | 10 | n/a | 0 |
+| firefox | pr474 | 148 | 191 | 191 | 13 | 102 | 117 | 755 | 5 | n/a | 5 |
+| firefox | local-end-stamp | 143 | 203 | 203 | 9 | 17 | 17 | 741 | 5 | n/a | 0 |
+| firefox | local-react-style | 129 | 169 | 169 | 4 | 17 | 21 | 739 | 13 | n/a | 0 |
+| webkit | baseline | 127 | 147 | 159 | 9 | 28 | 32 | 749 | 12 | n/a | 0 |
+| webkit | pr474 | 151 | 185 | 200 | 2 | 95 | 107 | 752 | 6 | n/a | 5 |
+| webkit | local-end-stamp | 153 | 181 | 191 | 3 | 14 | 14 | 755 | 6 | n/a | 0 |
+| webkit | local-react-style | 125 | 147 | 157 | 11 | 21 | 26 | 750 | 10 | n/a | 0 |
 
 ## Patched content → interactive (`/s/patch-interactive`)
 
@@ -50,61 +59,85 @@ Gap between the patched counter becoming visible and the first click registering
 
 | browser | variant | hydrate | visible at | interactive at | gap (median) | runs never interactive |
 |---|---|---|---|---|---|---|
-| chromium | baseline | late | 555 | 679 | 130 | 0/5 |
-| chromium | baseline | early | 224 | 236 | 11 | 0/5 |
-| chromium | dpu-end-stamp | late | 541 | 627 | 93 | 0/5 |
-| chromium | dpu-end-stamp | early | 219 | 228 | 11 | 0/5 |
-| chromium | dpu-support-react-style | late | 531 | 635 | 95 | 0/5 |
-| chromium | dpu-support-react-style | early | 235 | 245 | 11 | 0/5 |
-| firefox | baseline | late | 610 | 747 | 124 | 0/5 |
-| firefox | baseline | early | 252 | 265 | 15 | 0/5 |
-| firefox | dpu-end-stamp | late | 534 | 627 | 137 | 0/5 |
-| firefox | dpu-end-stamp | early | 197 | 213 | 16 | 0/5 |
-| firefox | dpu-support-react-style | late | 530 | 653 | 114 | 0/5 |
-| firefox | dpu-support-react-style | early | 250 | 260 | 12 | 0/5 |
-| webkit | baseline | late | 536 | 650 | 110 | 0/5 |
-| webkit | baseline | early | 258 | 275 | 17 | 0/5 |
-| webkit | dpu-end-stamp | late | 537 | 658 | 122 | 0/5 |
-| webkit | dpu-end-stamp | early | 189 | 200 | 14 | 0/5 |
-| webkit | dpu-support-react-style | late | 527 | 662 | 121 | 0/5 |
-| webkit | dpu-support-react-style | early | 192 | 210 | 21 | 0/5 |
+| chromium | baseline | late | 559 | 648 | 91 | 0/5 |
+| chromium | baseline | early | 245 | 257 | 12 | 0/5 |
+| chromium | pr474 | late | 560 | 640 | 81 | 0/5 |
+| chromium | pr474 | early | 272 | 282 | 11 | 0/5 |
+| chromium | local-end-stamp | late | 520 | 630 | 102 | 0/5 |
+| chromium | local-end-stamp | early | 217 | 231 | 11 | 0/5 |
+| chromium | local-react-style | late | 536 | 667 | 124 | 0/5 |
+| chromium | local-react-style | early | 228 | 238 | 17 | 0/5 |
+| firefox | baseline | late | 511 | 645 | 119 | 0/5 |
+| firefox | baseline | early | 209 | 227 | 19 | 0/5 |
+| firefox | pr474 | late | 673 | 686 | 13 | 0/5 |
+| firefox | pr474 | early | 216 | 238 | 13 | 0/5 |
+| firefox | local-end-stamp | late | 546 | 626 | 112 | 0/5 |
+| firefox | local-end-stamp | early | 218 | 234 | 16 | 0/5 |
+| firefox | local-react-style | late | 546 | 691 | 143 | 0/5 |
+| firefox | local-react-style | early | 195 | 209 | 16 | 0/5 |
+| webkit | baseline | late | 537 | 620 | 107 | 0/5 |
+| webkit | baseline | early | 209 | 223 | 14 | 0/5 |
+| webkit | pr474 | late | 580 | 597 | 15 | 0/5 |
+| webkit | pr474 | early | 201 | 216 | 15 | 0/5 |
+| webkit | local-end-stamp | late | 517 | 627 | 99 | 0/5 |
+| webkit | local-end-stamp | early | 245 | 265 | 18 | 0/5 |
+| webkit | local-react-style | late | 525 | 638 | 96 | 0/5 |
+| webkit | local-react-style | early | 260 | 281 | 20 | 0/5 |
 
 ## Strict CSP (`script-src 'self' 'nonce-…'`, stream's inline scripts have no nonce)
 
 | browser | variant | template[for] left unapplied | fallbacks left on screen |
 |---|---|---|---|
 | chromium | baseline | 0 | 16 |
-| chromium | dpu-end-stamp | 0 | 0 |
-| chromium | dpu-support-react-style | 0 | 0 |
+| chromium | pr474 | 0 | 0 |
+| chromium | local-end-stamp | 0 | 0 |
+| chromium | local-react-style | 0 | 0 |
 | firefox | baseline | 0 | 16 |
-| firefox | dpu-end-stamp | 112 | 10 |
-| firefox | dpu-support-react-style | 112 | 10 |
+| firefox | pr474 | 112 | 10 |
+| firefox | local-end-stamp | 112 | 10 |
+| firefox | local-react-style | 112 | 10 |
 | webkit | baseline | 0 | 16 |
-| webkit | dpu-end-stamp | 112 | 10 |
-| webkit | dpu-support-react-style | 112 | 10 |
+| webkit | pr474 | 112 | 10 |
+| webkit | local-end-stamp | 112 | 10 |
+| webkit | local-react-style | 112 | 10 |
 
 ## Payload (bytes; gzip/brotli are estimated by compressing the decoded stream locally, not measured on the wire)
 
 | page | boundaries | variant | raw | gzip | brotli | inline script bytes |
 |---|---|---|---|---|---|---|
 | zero | 0 | baseline | 17472 | 5273 | 4415 | 775 |
-| zero | 0 | dpu-end-stamp | 17526 | 5303 | 4449 | 802 |
-| zero | 0 | dpu-support-react-style | 17576 | 5304 | 4443 | 822 |
+| zero | 0 | pr474 | 17528 | 5306 | 4445 | 807 |
+| zero | 0 | local-end-stamp | 17566 | 5327 | 4467 | 821 |
+| zero | 0 | local-react-style | 17592 | 5328 | 4450 | 833 |
 | one | 1 | baseline | 18794 | 5863 | 4948 | 1946 |
-| one | 1 | dpu-end-stamp | 18776 | 5954 | 5070 | 1904 |
-| one | 1 | dpu-support-react-style | 18461 | 5769 | 4886 | 1572 |
+| one | 1 | pr474 | 18806 | 5960 | 5073 | 1951 |
+| one | 1 | local-end-stamp | 18956 | 6073 | 5163 | 2063 |
+| one | 1 | local-react-style | 18477 | 5793 | 4910 | 1583 |
 | popcorn | 16 | baseline | 21211 | 6142 | 5146 | 1943 |
-| popcorn | 16 | dpu-end-stamp | 21418 | 6341 | 5295 | 1901 |
-| popcorn | 16 | dpu-support-react-style | 21328 | 6155 | 5138 | 1989 |
+| popcorn | 16 | pr474 | 21238 | 6293 | 5271 | 1948 |
+| popcorn | 16 | local-end-stamp | 21598 | 6453 | 5397 | 2060 |
+| popcorn | 16 | local-react-style | 21344 | 6179 | 5136 | 2000 |
 | many | 60 | baseline | 26525 | 6851 | 5399 | 1948 |
-| many | 60 | dpu-end-stamp | 27392 | 7340 | 5579 | 1906 |
-| many | 60 | dpu-support-react-style | 27962 | 7152 | 5500 | 3226 |
+| many | 60 | pr474 | 26596 | 7140 | 5520 | 1953 |
+| many | 60 | local-end-stamp | 27572 | 7458 | 5690 | 2065 |
+| many | 60 | local-react-style | 27978 | 7176 | 5469 | 3237 |
 | grid | 100 | baseline | 30199 | 7369 | 5685 | 1941 |
-| grid | 100 | dpu-end-stamp | 31455 | 8031 | 5940 | 1899 |
-| grid | 100 | dpu-support-react-style | 32400 | 7826 | 5801 | 3926 |
+| grid | 100 | pr474 | 30302 | 7758 | 5853 | 1946 |
+| grid | 100 | local-end-stamp | 31695 | 8165 | 6057 | 2058 |
+| grid | 100 | local-react-style | 32416 | 7854 | 5828 | 3937 |
 | big | 1 | baseline | 34742 | 9307 | 6005 | 1945 |
-| big | 1 | dpu-end-stamp | 34726 | 9398 | 6102 | 1903 |
-| big | 1 | dpu-support-react-style | 34411 | 9208 | 5956 | 1572 |
+| big | 1 | pr474 | 34755 | 9396 | 6091 | 1950 |
+| big | 1 | local-end-stamp | 34906 | 9529 | 6205 | 2062 |
+| big | 1 | local-react-style | 34427 | 9233 | 5940 | 1583 |
+
+### Projection: end stamp as a single newline instead of `<!--$p:id-->` (variants that emit stamps only; string substitution on the real output, NOT a working implementation, no behavior/timing measured)
+
+| page | boundaries | variant | stamps | raw | raw if newline | gzip | gzip if newline | brotli | brotli if newline |
+|---|---|---|---|---|---|---|---|---|---|
+| one | 1 | local-end-stamp | 1 | 18956 | 18943 | 6073 | 6070 | 5163 | 5178 |
+| popcorn | 16 | local-end-stamp | 16 | 21598 | 21390 | 6453 | 6398 | 5397 | 5376 |
+| many | 60 | local-end-stamp | 60 | 27572 | 26792 | 7458 | 7256 | 5690 | 5656 |
+| grid | 100 | local-end-stamp | 85 | 31695 | 30571 | 8165 | 7868 | 6057 | 5945 |
 
 ### Overhead model (raw bytes)
 
@@ -113,16 +146,28 @@ Fixed = bytes added once a page has ≥1 boundary (init script/CE) = `one − ze
 | variant | one boundary − zero | per boundary (16→100) | per boundary gzip (16→100) |
 |---|---|---|---|
 | baseline | 1322 | 107.0 | 14.6 |
-| dpu-end-stamp | 1250 | 119.5 | 20.1 |
-| dpu-support-react-style | 885 | 131.8 | 19.9 |
+| pr474 | 1278 | 107.9 | 17.4 |
+| local-end-stamp | 1390 | 120.2 | 20.4 |
+| local-react-style | 885 | 131.8 | 19.9 |
 
-## Correctness (final state after settle; `/dpu`, 27 scenarios)
+## Correctness, hydrate=off (stream + polyfill/native only, no client JS) — `/dpu`, 26 checks + isolated foreignObject page
 
-| variant | chromium | firefox | webkit |
-|---|---|---|---|
-| baseline | 25/27 | 25/27 | 25/27 |
-| main-fork-preact | 25/27 | 25/27 | 25/27 |
-| dpu-end-stamp | 27/27 | 27/27 | 27/27 |
-| dpu-support-react-style | 27/27 | 27/27 | 27/27 |
+| variant | chromium | firefox | webkit | foreignObject page (C/F/W) |
+|---|---|---|---|---|
+| baseline | 23/26 | 23/26 | 23/26 | ok / ok / ok |
+| pr474 | 26/26 | 26/26 | 26/26 | HUNG / HUNG / HUNG |
+| local-end-stamp | 26/26 | 26/26 | 26/26 | ok / ok / ok |
+| local-react-style | 26/26 | 26/26 | 26/26 | ok / ok / ok |
 
-Failing scenarios: svg-namespace (baseline/chromium), mathml-namespace (baseline/chromium), svg-namespace (baseline/firefox), mathml-namespace (baseline/firefox), svg-namespace (baseline/webkit), mathml-namespace (baseline/webkit), svg-namespace (main-fork-preact/chromium), mathml-namespace (main-fork-preact/chromium), svg-namespace (main-fork-preact/firefox), mathml-namespace (main-fork-preact/firefox), svg-namespace (main-fork-preact/webkit), mathml-namespace (main-fork-preact/webkit)
+Failing checks: **table-rows** (baseline/chromium, baseline/firefox, baseline/webkit); **svg-namespace** (baseline/chromium, baseline/firefox, baseline/webkit); **mathml-namespace** (baseline/chromium, baseline/firefox, baseline/webkit)
+
+## Correctness, hydrate=late (after client hydration; hydration can mask a failed patch) — `/dpu`, 26 checks + isolated foreignObject page
+
+| variant | chromium | firefox | webkit | foreignObject page (C/F/W) |
+|---|---|---|---|---|
+| baseline | 24/26 | 24/26 | 24/26 | ok / ok / ok |
+| pr474 | 26/26 | 26/26 | 26/26 | HUNG / HUNG / HUNG |
+| local-end-stamp | 26/26 | 26/26 | 26/26 | ok / ok / ok |
+| local-react-style | 26/26 | 26/26 | 26/26 | ok / ok / ok |
+
+Failing checks: **svg-namespace** (baseline/chromium, baseline/firefox, baseline/webkit); **mathml-namespace** (baseline/chromium, baseline/firefox, baseline/webkit)

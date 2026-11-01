@@ -5,6 +5,7 @@ import { chromium, firefox, webkit } from 'playwright';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const versions = JSON.parse(readFileSync('versions.json', 'utf8'));
+const HYDRATE = process.env.HYDRATE || 'off'; // 'off' = judge the stream/polyfill alone; 'late' = after client hydration (can mask patch failures)
 const variants = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(versions);
 const host = v => `https://preact-eco-${v}.to-email-max.workers.dev`;
 const browsers = { chromium, firefox, webkit };
@@ -26,7 +27,6 @@ return {
  'svg-namespace': () => ns($(sc('svg-namespace') + 'circle')) === 'svg',
  'mathml-namespace': () => ns($(sc('mathml-namespace') + 'mi')) === 'MathML',
  'style-hoist': () => $('[data-testid=styled]') && getComputedStyle($('[data-testid=styled]')).color === 'rgb(255, 99, 71)',
- 'foreign-object': () => ns($('[data-testid=fo]')) === 'xhtml',
  'inline-script': () => $('[data-testid=script-done]') && noFallback('inline-script'),
  'empty': () => noFallback('empty'),
  'multi-root': () => $('[data-testid=multi-host]').textContent === '123',
@@ -68,7 +68,7 @@ for (const v of variants) {
 		const page = await b.newPage();
 		const errors = [];
 		page.on('pageerror', e => errors.push(e.message.slice(0, 120)));
-		await page.goto(`${host(v)}/dpu`, { waitUntil: 'commit' });
+		await page.goto(`${host(v)}/dpu?skip=foreign-object&hydrate=${HYDRATE}`, { waitUntil: 'commit' });
 		await page.waitForTimeout(14000);
 		const res = await Promise.race([
 			page.evaluate(`(() => { const c = ${CHECKS}; const r = {};
@@ -82,13 +82,20 @@ for (const v of variants) {
 			new Promise(r => setTimeout(() => r('HUNG'), 8000)),
 		]);
 		out[v].browsers[bn] = res === 'HUNG' ? { hung: true, errors } : { ...res, errors };
+		// foreignObject is isolated: on some builds it blocks the main thread and would mask every other result.
+		const fo = await b.newPage();
+		await fo.goto(`${host(v)}/s/foreign-object`, { waitUntil: 'commit' });
+		await fo.waitForTimeout(3500);
+		const foRes = await Promise.race([fo.evaluate(() => ({ ns: document.querySelector('[data-testid=fo]')?.namespaceURI.split('/').pop() ?? null })), new Promise(r => setTimeout(() => r('HUNG'), 4000))]);
+		out[v].browsers[bn].foreignObject = foRes === 'HUNG' ? 'HUNG' : foRes.ns === 'xhtml' ? 'ok' : 'wrong';
+		await fo.close().catch(() => {});
 		await b.close().catch(() => {});
 		console.error(`done ${v} ${bn}`);
 	}
 }
 
 mkdirSync('results', { recursive: true });
-writeFileSync('results/compare.json', JSON.stringify(out, null, 2));
+writeFileSync(`results/compare-${HYDRATE}.json`, JSON.stringify(out, null, 2));
 
 const ids = Object.keys(Object.values(out).flatMap(x => Object.values(x.browsers)).find(b => b.checks)?.checks ?? {});
 let md = `# Variant comparison (${new Date().toISOString().slice(0, 10)})\n\nLive \`/dpu\` page, 14s settle. Variants: ${variants.join(', ')}.\n\n`;
@@ -97,9 +104,10 @@ for (const v of variants) md += `| ${v} | ${out[v].net.bytes} | ${out[v].net.fir
 const cols = variants.flatMap(v => Object.keys(browsers).map(b => [v, b]));
 md += `\n## Scenario pass/fail\n\n| scenario | ${cols.map(([v, b]) => `${v}<br>${b}`).join(' | ')} |\n|---|${cols.map(() => '---').join('|')}|\n`;
 for (const id of ids) md += `| ${id} | ${cols.map(([v, b]) => { const r = out[v].browsers[b]; return r.hung ? 'HUNG' : r.checks[id] ? '✅' : '❌'; }).join(' | ')} |\n`;
-md += `| **passed** | ${cols.map(([v, b]) => { const r = out[v].browsers[b]; return r.hung ? 'HUNG' : `${Object.values(r.checks).filter(Boolean).length}/${ids.length}`; }).join(' | ')} |\n`;
+md += `| foreign-object (isolated page) | ${cols.map(([v, b]) => out[v].browsers[b].foreignObject === 'ok' ? '✅' : out[v].browsers[b].foreignObject === 'HUNG' ? '**HUNG**' : '❌').join(' | ')} |\n`;
+md += `| **passed** (checks above) | ${cols.map(([v, b]) => { const r = out[v].browsers[b]; return r.hung ? 'HUNG' : `${Object.values(r.checks).filter(Boolean).length}/${ids.length}`; }).join(' | ')} |\n`;
 md += `\n## Patch diagnostics\n\n| variant | browser | $RC inits | $RC calls | native | polyfill | leftover templates | leftover fallbacks | preact-islands | max stall ms | page errors |\n|---|---|---|---|---|---|---|---|---|---|---|\n`;
 for (const [v, b] of cols) { const r = out[v].browsers[b]; md += r.hung ? `| ${v} | ${b} | HUNG |||||||||\n` :
 	`| ${v} | ${b} | ${r.rc?.inits ?? '–'} | ${r.rc?.calls ?? '–'} | ${r.rc?.native ?? '–'} | ${r.rc?.polyfill ?? '–'} | ${r.leftoverTemplates} | ${r.leftoverFallbacks} | ${r.preactIslands} | ${r.rc?.maxGap ?? '–'} | ${r.errors.length} |\n`; }
-writeFileSync('results/compare.md', md);
+writeFileSync(`results/compare-${HYDRATE}.md`, md);
 console.log(md);
