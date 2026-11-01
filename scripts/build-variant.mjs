@@ -7,6 +7,8 @@ import { join, resolve } from 'node:path';
 
 const name = process.argv[2];
 const versions = JSON.parse(readFileSync('versions.json', 'utf8'));
+// Untracked, machine-local variants (absolute paths to local checkouts) live in versions.local.json.
+if (existsSync('versions.local.json')) Object.assign(versions, JSON.parse(readFileSync('versions.local.json', 'utf8')));
 const v = versions[name];
 if (!v) throw new Error(`unknown variant "${name}". Known: ${Object.keys(versions).join(', ')}`);
 
@@ -24,7 +26,7 @@ mkdirSync(out, { recursive: true });
 const tarballs = {};
 for (const [key, { repo, ref }] of Object.entries(v)) {
   const dir = join(src, key);
-  run('git', ['clone', '--depth', '1', '--branch', ref, `https://github.com/${repo}.git`, dir]);
+  run('git', ['clone', '--depth', '1', '--branch', ref, repo.startsWith('/') ? repo : `https://github.com/${repo}.git`, dir]);
   const sha = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: dir }).toString().trim();
   const pnpm = existsSync(join(dir, 'pnpm-lock.yaml'));
   run(pnpm ? 'pnpm' : 'npm', pnpm ? ['install', '--frozen-lockfile', '--ignore-scripts'] : ['install', '--ignore-scripts', '--no-audit', '--no-fund'], dir);

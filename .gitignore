@@ -2,3 +2,4 @@ node_modules
 .build
 .cache
 .wrangler
+versions.local.json

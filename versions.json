@@ -38,5 +38,15 @@
       "repo": "preactjs/preact-render-to-string",
       "ref": "main"
     }
+  },
+  "pr474": {
+    "preact": {
+      "repo": "MaxwellCohen/preact",
+      "ref": "main"
+    },
+    "rts": {
+      "repo": "MaxwellCohen/preact-render-to-string",
+      "ref": "dpu-template-for-streaming"
+    }
   }
 }
