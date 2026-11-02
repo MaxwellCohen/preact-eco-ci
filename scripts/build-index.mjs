@@ -11,6 +11,7 @@ const LABEL = {
 	'dpu-support-react-style': ['PR #490', 'preactjs/preact-render-to-string#490 head (dpu-support-react-style): <template for> + per-chunk <script> + one init script.'],
 	'local-react-style': ['react-style (local)', 'Local dpu-support-react-style tip (differs from the pushed commit).'],
 };
+const esc = x => String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const host = v => `https://preact-eco-${v}.to-email-max.workers.dev`;
 const vs = readdirSync('.build').filter(d => existsSync(`.build/${d}/src/version.json`) && d !== 'index');
 const order = ['baseline','dpu-support','dpu-support-react-style','pr474','main-fork-preact','dpu-end-stamp','local-end-stamp','local-react-style'];
@@ -20,7 +21,7 @@ const rows = vs.map(v => {
 	const j = JSON.parse(readFileSync(`.build/${v}/src/version.json`, 'utf8'));
 	const [name, desc] = LABEL[v] ?? [v, ''];
 	const link = (p, t) => `<a href="${host(v)}${p}">${t}</a>`;
-	return `<tr><td><b>${name}</b><br><code>${v}</code></td><td>${desc}<br><small>rts <code>${j.rts.ref.split('/').pop()}@${j.rts.sha.slice(0, 7)}</code> · preact <code>${j.preact.sha.slice(0, 7)}</code></small></td>
+	return `<tr><td><b>${esc(name)}</b><br><code>${v}</code></td><td>${esc(desc)}<br><small>rts <code>${j.rts.ref.split('/').pop()}@${j.rts.sha.slice(0, 7)}</code> · preact <code>${j.preact.sha.slice(0, 7)}</code></small></td>
 <td>${link('/dpu', 'diagnostics')} · ${link('/dpu?csp=strict', 'strict CSP')} · ${link('/', 'all 54 scenarios')} · ${link('/s/popcorning', 'popcorning')} · ${link('/index.json', 'json')}</td></tr>`;
 }).join('\n');
 
