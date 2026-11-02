@@ -21,7 +21,36 @@ All use the same `preact` (`MaxwellCohen/preact` `main` `921df34`) and the same 
 Cloudflare Workers. A control (upstream `main` + the fork's `preact`) matched `baseline` on every correctness check,
 so differences come from the `preact-render-to-string` change.
 
-## Headline results
+## `main` vs `dpu-support` (`c1d0a66`; PR #474 head `e1e62e6` has the same code)
+
+Interleaved runs, 5 iterations per cell, deployed Workers. Lag = patch visible − (responseStart + server delay), medians for 16 / 60 / 100 boundaries.
+
+| | main | dpu-support |
+|---|---|---|
+| Correct DOM, stream only (`hydrate=off`), 26 checks × 3 browsers | 23/26 (`table-rows`, `svg-namespace`, `mathml-namespace`) | **26/26** |
+| Correct DOM after hydration (`hydrate=late`) | 24/26 (`svg-namespace`, `mathml-namespace`) | **26/26** |
+| `<svg><foreignObject>` page / boundaries never shown | ok / 0 | ok / 0 |
+| Patch lag, Chromium (ms) | −8 / −3 / 6 | −4 / −1 / 4 |
+| Patch lag, Firefox (ms) | 31 / 30 / 23 | **10 / 15 / 15** |
+| Patch lag, WebKit (ms) | −3 / 1 / 19 | −2 / −1 / 1 |
+| Patched content → interactive, client script after stream (Chromium / Firefox / WebKit, ms) | 124 / 97 / 97 | 102 / 125 / 137 |
+| Same, client script mid-stream | 11 / 15 / 13 | 10 / 15 / 15 |
+| Longest main-thread stall in any timing cell | 68 ms | 35 ms |
+| Fixed overhead, first boundary (raw) | 1319 B | **1190 B** |
+| Per boundary raw / gzip / brotli (est.) | 106.8 / 14.6 / 5.7 B | 108.4 / 17.4 / 6.9 B |
+| 60-boundary page, gzip (est.) | 6839 B | 7062 B (+3.3%) |
+| Strict CSP (inline scripts without nonce) | fallbacks stay in all 3 browsers | works in Chromium; Firefox/WebKit leave 112 templates unapplied |
+
+Reading it: `dpu-support` fixes the table-row and namespace failures of `main`, has no timing penalty (lower lag in
+Firefox, equal elsewhere), costs ≈ +2.8 gzip bytes per boundary but ≈ 130 B less once per page. One watch item: in
+Firefox and WebKit the patched counter becomes clickable 28–40 ms later than on `main` when the client script loads
+after the stream (spread across the 5 runs was not analysed, so treat differences of this size with caution).
+Wire table for the PR description (id=5, no nonce, content excluded): main 1273 B → 1142 B for one boundary,
+2056 B → 1916 B for ten.
+
+## All variants
+
+### Headline results
 
 | question | main | PR #474 | local end-stamp | local react-style |
 |---|---|---|---|---|

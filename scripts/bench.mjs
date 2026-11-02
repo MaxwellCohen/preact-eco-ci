@@ -7,7 +7,7 @@ const [bn, runsArg, ...rest] = process.argv.slice(2);
 const bt = { chromium, firefox, webkit }[bn];
 const RUNS = Number(runsArg || 5);
 const versions = JSON.parse(readFileSync('versions.json', 'utf8'));
-const variants = rest.length ? rest : ['baseline', 'pr474', 'local-end-stamp', 'local-react-style'];
+const variants = rest.length ? rest : ['baseline', 'pr474', 'local-end-stamp', 'local-react-style', 'dpu-support'];
 const host = v => `https://preact-eco-${v}.to-email-max.workers.dev`;
 
 const POPCORN = [420, 1680, 780, 2100, 1100, 540, 1900, 1320, 2260, 860, 1480, 640, 1980, 980, 1200, 1540];

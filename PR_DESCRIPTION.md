@@ -10,7 +10,7 @@ polyfill elsewhere. Fixes boundaries inside `<svg>` / `<math>` being inserted in
 See the comparison report: <link to eco-ci REPORT.md>. In short (Chromium, Firefox, WebKit; 27 scenarios):
 - Correctness (stream only): 26/26 vs 23/26 on `main` (`table-rows`, SVG, MathML namespace). Also fixes a `foreignObject` hang and a lost-last-boundary race that PR #474 as opened shows in Firefox/WebKit.
 - Timing: no measurable penalty up to 100 boundaries (patch lag within ~±15 ms; resolution-limited).
-- Payload: ≈ +5 B gzip per boundary.
+- Payload: +2.8 B gzip (+1.6 B raw) per boundary vs `main`, ≈130 B less once per page (init script 1056 vs 1186 B incl. hidden wrapper).
 - Not solved: strict-CSP pages in browsers without native DPU (inline scripts carry no nonce).
 
 ## Open questions for maintainers

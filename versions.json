@@ -48,5 +48,15 @@
       "repo": "MaxwellCohen/preact-render-to-string",
       "ref": "dpu-template-for-streaming"
     }
+  },
+  "dpu-support": {
+    "preact": {
+      "repo": "MaxwellCohen/preact",
+      "ref": "main"
+    },
+    "rts": {
+      "repo": "MaxwellCohen/preact-render-to-string",
+      "ref": "dpu-support"
+    }
   }
 }

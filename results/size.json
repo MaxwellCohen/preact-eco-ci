@@ -342,5 +342,91 @@
       "stamps": 0,
       "rcCalls": 1
     }
+  },
+  "dpu-support": {
+    "zero": {
+      "nlRaw": 17516,
+      "nlGzip": 5298,
+      "nlBrotli": 4433,
+      "boundaries": 0,
+      "raw": 17516,
+      "gzip": 5298,
+      "brotli": 4433,
+      "scriptBytes": 798,
+      "templates": 0,
+      "islands": 0,
+      "stamps": 0,
+      "rcCalls": 0
+    },
+    "one": {
+      "nlRaw": 18706,
+      "nlGzip": 5892,
+      "nlBrotli": 4991,
+      "boundaries": 1,
+      "raw": 18706,
+      "gzip": 5892,
+      "brotli": 4991,
+      "scriptBytes": 1857,
+      "templates": 1,
+      "islands": 0,
+      "stamps": 0,
+      "rcCalls": 0
+    },
+    "popcorn": {
+      "nlRaw": 21105,
+      "nlGzip": 6222,
+      "nlBrotli": 5221,
+      "boundaries": 16,
+      "raw": 21105,
+      "gzip": 6222,
+      "brotli": 5221,
+      "scriptBytes": 1854,
+      "templates": 16,
+      "islands": 0,
+      "stamps": 0,
+      "rcCalls": 0
+    },
+    "many": {
+      "nlRaw": 26507,
+      "nlGzip": 7062,
+      "nlBrotli": 5508,
+      "boundaries": 60,
+      "raw": 26507,
+      "gzip": 7062,
+      "brotli": 5508,
+      "scriptBytes": 1859,
+      "templates": 60,
+      "islands": 0,
+      "stamps": 0,
+      "rcCalls": 0
+    },
+    "grid": {
+      "nlRaw": 30214,
+      "nlGzip": 7680,
+      "nlBrotli": 5797,
+      "boundaries": 100,
+      "raw": 30214,
+      "gzip": 7680,
+      "brotli": 5797,
+      "scriptBytes": 1852,
+      "templates": 85,
+      "islands": 0,
+      "stamps": 0,
+      "rcCalls": 0
+    },
+    "big": {
+      "nlRaw": 34651,
+      "nlGzip": 9333,
+      "nlBrotli": 6036,
+      "boundaries": 1,
+      "raw": 34651,
+      "gzip": 9333,
+      "brotli": 6036,
+      "scriptBytes": 1856,
+      "templates": 1,
+      "islands": 0,
+      "stamps": 0,
+      "rcCalls": 0
+    }
   }
 }

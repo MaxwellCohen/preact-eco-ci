@@ -7,6 +7,7 @@ const LABEL = {
 	pr474: ['PR #474', 'preactjs/preact-render-to-string#474 as opened (template-for + MutationObserver polyfill).'],
 	'dpu-end-stamp': ['end-stamp (pushed)', 'Pushed fork branch dpu-end-stamp (comment end stamp).'],
 	'local-end-stamp': ['PR #474 line + local changes', 'Local dpu-end-stamp tip (unpushed commits): hydration + SVG handling using the stamp method.'],
+	'dpu-support': ['dpu-support (PR #474 content)', 'Pushed dpu-support c1d0a66: <template for> + newline stamp (same code as PR #474 head e1e62e6).'],
 	'dpu-support-react-style': ['react-style (pushed)', 'Pushed fork branch: <template for> + <script>$RC(id)</script>.'],
 	'local-react-style': ['react-style (local)', 'Local dpu-support-react-style tip (differs from the pushed commit).'],
 };
