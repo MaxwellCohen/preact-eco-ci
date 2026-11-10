@@ -21,26 +21,32 @@ All use the same `preact` (`MaxwellCohen/preact` `main` `921df34`) and the same 
 Cloudflare Workers. A control (upstream `main` + the fork's `preact`) matched `baseline` on every correctness check,
 so differences come from the `preact-render-to-string` change.
 
-## main vs #474 vs #490 (`c1d0a66` / `44c96f0`)
+## main vs #474 vs #490 (`c1d0a66` / `ea0e643`)
 
-Interleaved, 5 iterations/cell, deployed Workers. Correctness (26 checks × 3 browsers): main 23/26 (stream only) and 24/26 (after hydration); #474 and #490 26/26 in both, `foreignObject` ok everywhere.
+Rerun on 10 November 2026 after #490 gained four commits (`44c96f0` → `ea0e643`). Interleaved, 5 iterations/cell, deployed Workers.
+The previous run set is in [`results/prev`](./results/prev).
+
+- **Correctness** (26 checks × 3 browsers): #474 and #490 pass 26/26 streaming alone and after hydration. main passes 23/26
+  streaming alone (`table-rows`, `svg-namespace`, `mathml-namespace` fail) and 24/26 after hydration.
+- **Speed**: no meaningful difference. The one repeatable gap is Firefox patch lag, where both PRs are lower than main.
+  The patched→interactive rows moved between the two run sets by as much as the columns differ.
+- **Size**: #490 costs 26 raw B more per boundary than #474 (≈ +3 gzip B on the demo pages, ≈ +6 vs main) and has the smallest
+  one-time script (863 B vs 1056 / 1168 + 18). The new commits grew that script from 720 B; the PR body still quotes 720.
 
 | | main | #474 | #490 |
 |---|---|---|---|
-| Patch lag Chromium 16/60/100 bnd (ms) | -2 / 0 / 7 | -2 / 0 / 0 | 0 / 1 / 5 |
-| Patch lag Firefox (ms) | 25 / 22 / 28 | 11 / 12 / 17 | -2 / 1 / 6 |
-| Patch lag WebKit (ms) | -4 / 4 / 10 | -3 / -3 / 6 | 1 / 1 / 11 |
+| Patch lag Chromium 16/60/100 bnd (ms) | -3 / 0 / 4 | -9 / 0 / 1 | -13 / 0 / 0 |
+| Patch lag Firefox (ms) | 23 / 23 / 23 | 13 / 14 / 15 | -6 / -2 / 4 |
+| Patch lag WebKit (ms) | -4 / -1 / 12 | -2 / -4 / 1 | -6 / 1 / 9 |
 | Boundaries never shown | 0 | 0 | 0 |
-| Patched→interactive, client script after stream (C/F/W, ms) | 103 / 102 / 106 | 90 / 81 / 114 | 106 / 121 / 104 |
-| Same, mid-stream | 12 / 12 / 14 | 11 / 15 / 15 | 16 / 13 / 14 |
-| Longest stall, any cell (ms) *(single outliers; noisy)* | 956 | 158 | 46 |
-| Strict CSP templates unapplied (C/F/W) | 0 / 0 / 0 (fallbacks stay) | 0 / 112 / 112 | 0 / 112 / 112 |
-| Fixed overhead, first boundary (raw B) | 1319 | 1190 | **883** |
-| Per boundary raw / gzip / brotli (B, est.) | 106.8 / 14.6 / 5.7 | 108.4 / 17.4 / 6.9 | 132.3 / 20.1 / 8.2 |
-| 60 / 100-boundary page gzip (B, est.) | 6839 / 7367 | 7062 / 7680 | 7154 / 7851 |
-
-#490 costs ≈ +5.5 gzip B per boundary vs main but 436 B less raw once per page; #474 ≈ +2.8 B. Timing differences are small
-and within noise except Firefox patch lag, where both DPU PRs are lower than main.
+| Patched→interactive, client script after stream (C/F/W, ms) | 114 / 137 / 166 | 227 / 100 / 127 | 167 / 115 / 109 |
+| Same, mid-stream | 11 / 14 / 16 | 13 / 17 / 15 | 13 / 14 / 13 |
+| Longest stall, any cell (ms) *(single outliers; noisy)* | 75 | 87 | 76 |
+| Strict CSP templates unapplied (C/F/W) | n/a (fallbacks stay) | 0 / 112 / 112 | 0 / 112 / 112 |
+| Wire: per boundary / once per page (raw B) | 87 / 1186 | 86 / 1056 | 112 / 863 |
+| Fixed overhead, first boundary (raw B, demo page) | 1319 | 1190 | 1028 |
+| Per boundary raw / gzip / brotli (B, est.) | 106.8 / 14.6 / 5.7 | 108.4 / 17.4 / 6.9 | 133.9 / 20.4 / 8.5 |
+| 60 / 100-boundary page gzip (B, est.) | 6839 / 7367 | 7062 / 7680 | 7260 / 7966 |
 
 ## `main` vs `dpu-support` (`c1d0a66`; PR #474 head `e1e62e6` has the same code)
 
