@@ -6,43 +6,43 @@ Patch lag = time a boundary became visible − (responseStart + its server delay
 
 | browser | variant | TTFB | FCP | LCP | patch lag median | patch lag p95 | patch lag max | last visible | longest stall | long-task total | boundaries never shown |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| chromium | baseline | 136 | 160 | 160 | -2 | 14 | 14 | 2378 | 9 | 0 | 0 |
-| chromium | dpu-support | 141 | 172 | 172 | -2 | 45 | 45 | 2398 | 9 | 0 | 0 |
-| chromium | dpu-support-react-style | 134 | 156 | 156 | -0 | 19 | 19 | 2394 | 9 | 0 | 0 |
-| firefox | baseline | 112 | 146 | 146 | 25 | 37 | 37 | 2380 | 58 | n/a | 0 |
-| firefox | dpu-support | 110 | 145 | 145 | 11 | 20 | 20 | 2370 | 124 | n/a | 0 |
-| firefox | dpu-support-react-style | 99 | 141 | 141 | -2 | 11 | 11 | 2355 | 12 | n/a | 0 |
-| webkit | baseline | 106 | 123 | 136 | -4 | 3 | 3 | 2367 | 3 | n/a | 0 |
-| webkit | dpu-support | 118 | 145 | 155 | -3 | 30 | 30 | 2381 | 4 | n/a | 0 |
-| webkit | dpu-support-react-style | 94 | 115 | 123 | 1 | 30 | 30 | 2355 | 3 | n/a | 0 |
+| chromium | baseline | 119 | 148 | 148 | -3 | -0 | -0 | 2369 | 9 | 0 | 0 |
+| chromium | dpu-support | 213 | 248 | 248 | -9 | 4 | 4 | 2466 | 9 | 0 | 0 |
+| chromium | dpu-support-react-style | 190 | 240 | 240 | -13 | -7 | -7 | 2436 | 9 | 0 | 0 |
+| firefox | baseline | 115 | 155 | 155 | 23 | 31 | 31 | 2387 | 4 | n/a | 0 |
+| firefox | dpu-support | 134 | 157 | 157 | 13 | 18 | 18 | 2393 | 6 | n/a | 0 |
+| firefox | dpu-support-react-style | 112 | 146 | 146 | -6 | 9 | 9 | 2365 | 4 | n/a | 0 |
+| webkit | baseline | 198 | 244 | 256 | -4 | -1 | -1 | 2454 | 3 | n/a | 0 |
+| webkit | dpu-support | 111 | 130 | 138 | -2 | 10 | 10 | 2368 | 3 | n/a | 0 |
+| webkit | dpu-support-react-style | 137 | 161 | 170 | -6 | -1 | -1 | 2389 | 5 | n/a | 0 |
 
 ### many-boundaries (60)
 
 | browser | variant | TTFB | FCP | LCP | patch lag median | patch lag p95 | patch lag max | last visible | longest stall | long-task total | boundaries never shown |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| chromium | baseline | 100 | 128 | 128 | -1 | 17 | 21 | 1635 | 9 | 0 | 0 |
-| chromium | dpu-support | 111 | 136 | 136 | 0 | 7 | 14 | 1629 | 9 | 0 | 0 |
-| chromium | dpu-support-react-style | 125 | 152 | 152 | 1 | 10 | 16 | 1645 | 9 | 0 | 0 |
-| firefox | baseline | 117 | 143 | 143 | 22 | 32 | 47 | 1645 | 10 | n/a | 0 |
-| firefox | dpu-support | 121 | 163 | 163 | 12 | 21 | 27 | 1639 | 12 | n/a | 0 |
-| firefox | dpu-support-react-style | 98 | 135 | 135 | 1 | 9 | 15 | 1624 | 4 | n/a | 0 |
-| webkit | baseline | 96 | 133 | 148 | 4 | 17 | 27 | 1621 | 8 | n/a | 0 |
-| webkit | dpu-support | 129 | 146 | 156 | -3 | 7 | 28 | 1646 | 7 | n/a | 0 |
-| webkit | dpu-support-react-style | 136 | 154 | 163 | 1 | 10 | 13 | 1650 | 9 | n/a | 0 |
+| chromium | baseline | 99 | 128 | 128 | -1 | 13 | 13 | 1626 | 9 | 0 | 0 |
+| chromium | dpu-support | 184 | 228 | 228 | -0 | 1 | 1 | 1705 | 9 | 0 | 0 |
+| chromium | dpu-support-react-style | 194 | 220 | 220 | 0 | 2 | 5 | 1710 | 9 | 0 | 0 |
+| firefox | baseline | 160 | 202 | 202 | 23 | 34 | 47 | 1687 | 5 | n/a | 0 |
+| firefox | dpu-support | 154 | 190 | 190 | 14 | 19 | 22 | 1668 | 5 | n/a | 0 |
+| firefox | dpu-support-react-style | 92 | 130 | 130 | -2 | 3 | 7 | 1607 | 4 | n/a | 0 |
+| webkit | baseline | 116 | 138 | 145 | -1 | 10 | 17 | 1643 | 8 | n/a | 0 |
+| webkit | dpu-support | 181 | 203 | 210 | -4 | -1 | 2 | 1696 | 5 | n/a | 0 |
+| webkit | dpu-support-react-style | 165 | 190 | 199 | 1 | 10 | 13 | 1684 | 8 | n/a | 0 |
 
 ### grid-100 (100)
 
 | browser | variant | TTFB | FCP | LCP | patch lag median | patch lag p95 | patch lag max | last visible | longest stall | long-task total | boundaries never shown |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| chromium | baseline | 129 | 156 | 156 | 7 | 13 | 22 | 739 | 9 | 0 | 0 |
-| chromium | dpu-support | 133 | 160 | 160 | 0 | 10 | 10 | 739 | 9 | 0 | 0 |
-| chromium | dpu-support-react-style | 105 | 132 | 132 | 5 | 15 | 17 | 710 | 9 | 0 | 0 |
-| firefox | baseline | 106 | 160 | 160 | 28 | 34 | 36 | 743 | 5 | n/a | 0 |
-| firefox | dpu-support | 97 | 134 | 134 | 17 | 30 | 34 | 707 | 5 | n/a | 0 |
-| firefox | dpu-support-react-style | 114 | 143 | 143 | 6 | 18 | 21 | 730 | 4 | n/a | 0 |
-| webkit | baseline | 123 | 144 | 152 | 10 | 30 | 33 | 752 | 12 | n/a | 0 |
-| webkit | dpu-support | 122 | 143 | 152 | 6 | 10 | 10 | 727 | 4 | n/a | 0 |
-| webkit | dpu-support-react-style | 115 | 139 | 148 | 11 | 26 | 32 | 733 | 14 | n/a | 0 |
+| chromium | baseline | 166 | 196 | 196 | 4 | 9 | 13 | 772 | 9 | 0 | 0 |
+| chromium | dpu-support | 162 | 188 | 188 | 1 | 7 | 7 | 763 | 9 | 0 | 0 |
+| chromium | dpu-support-react-style | 418 | 464 | 464 | -0 | 8 | 8 | 1019 | 9 | 0 | 0 |
+| firefox | baseline | 159 | 190 | 190 | 23 | 38 | 40 | 782 | 9 | n/a | 0 |
+| firefox | dpu-support | 166 | 201 | 201 | 15 | 19 | 19 | 768 | 5 | n/a | 0 |
+| firefox | dpu-support-react-style | 263 | 321 | 321 | 4 | 24 | 24 | 866 | 5 | n/a | 0 |
+| webkit | baseline | 131 | 157 | 165 | 12 | 28 | 31 | 760 | 11 | n/a | 0 |
+| webkit | dpu-support | 150 | 183 | 192 | 1 | 11 | 11 | 759 | 3 | n/a | 0 |
+| webkit | dpu-support-react-style | 134 | 159 | 170 | 9 | 19 | 22 | 768 | 8 | n/a | 0 |
 
 ## Patched content → interactive (`/s/patch-interactive`)
 
@@ -50,24 +50,24 @@ Gap between the patched counter becoming visible and the first click registering
 
 | browser | variant | hydrate | visible at | interactive at | gap (median) | runs never interactive |
 |---|---|---|---|---|---|---|
-| chromium | baseline | late | 525 | 634 | 103 | 0/5 |
-| chromium | baseline | early | 230 | 241 | 13 | 0/5 |
-| chromium | dpu-support | late | 530 | 613 | 90 | 0/5 |
-| chromium | dpu-support | early | 198 | 210 | 11 | 0/5 |
-| chromium | dpu-support-react-style | late | 528 | 631 | 106 | 0/5 |
-| chromium | dpu-support-react-style | early | 221 | 234 | 17 | 0/5 |
-| firefox | baseline | late | 527 | 624 | 102 | 0/5 |
-| firefox | baseline | early | 206 | 216 | 12 | 0/5 |
-| firefox | dpu-support | late | 532 | 611 | 81 | 0/5 |
-| firefox | dpu-support | early | 205 | 219 | 15 | 0/5 |
-| firefox | dpu-support-react-style | late | 516 | 640 | 121 | 0/5 |
-| firefox | dpu-support-react-style | early | 201 | 217 | 13 | 0/5 |
-| webkit | baseline | late | 497 | 605 | 106 | 0/5 |
-| webkit | baseline | early | 243 | 256 | 14 | 0/5 |
-| webkit | dpu-support | late | 490 | 606 | 114 | 0/5 |
-| webkit | dpu-support | early | 204 | 222 | 15 | 0/5 |
-| webkit | dpu-support-react-style | late | 514 | 630 | 104 | 0/5 |
-| webkit | dpu-support-react-style | early | 208 | 221 | 14 | 0/5 |
+| chromium | baseline | late | 497 | 590 | 114 | 0/5 |
+| chromium | baseline | early | 254 | 270 | 11 | 0/5 |
+| chromium | dpu-support | late | 818 | 1030 | 227 | 0/5 |
+| chromium | dpu-support | early | 242 | 252 | 13 | 0/5 |
+| chromium | dpu-support-react-style | late | 623 | 761 | 167 | 0/5 |
+| chromium | dpu-support-react-style | early | 265 | 278 | 13 | 0/5 |
+| firefox | baseline | late | 594 | 780 | 137 | 0/5 |
+| firefox | baseline | early | 265 | 277 | 14 | 0/5 |
+| firefox | dpu-support | late | 542 | 647 | 100 | 0/5 |
+| firefox | dpu-support | early | 430 | 446 | 17 | 0/5 |
+| firefox | dpu-support-react-style | late | 539 | 666 | 115 | 0/5 |
+| firefox | dpu-support-react-style | early | 342 | 356 | 14 | 0/5 |
+| webkit | baseline | late | 554 | 720 | 166 | 0/5 |
+| webkit | baseline | early | 205 | 223 | 16 | 0/5 |
+| webkit | dpu-support | late | 468 | 595 | 127 | 0/5 |
+| webkit | dpu-support | early | 252 | 268 | 15 | 0/5 |
+| webkit | dpu-support-react-style | late | 518 | 627 | 109 | 0/5 |
+| webkit | dpu-support-react-style | early | 469 | 482 | 13 | 0/5 |
 
 ## Strict CSP (`script-src 'self' 'nonce-…'`, stream's inline scripts have no nonce)
 
@@ -89,22 +89,22 @@ Gap between the patched counter becoming visible and the first click registering
 |---|---|---|---|---|---|---|
 | zero | 0 | baseline | 17472 | 5273 | 4415 | 775 |
 | zero | 0 | dpu-support | 17516 | 5298 | 4433 | 798 |
-| zero | 0 | dpu-support-react-style | 17576 | 5306 | 4449 | 822 |
+| zero | 0 | dpu-support-react-style | 17576 | 5304 | 4449 | 822 |
 | one | 1 | baseline | 18791 | 5864 | 4950 | 1946 |
 | one | 1 | dpu-support | 18706 | 5892 | 4991 | 1857 |
-| one | 1 | dpu-support-react-style | 18459 | 5774 | 4893 | 1574 |
+| one | 1 | dpu-support-react-style | 18604 | 5865 | 4972 | 1719 |
 | popcorn | 16 | baseline | 21172 | 6141 | 5151 | 1943 |
 | popcorn | 16 | dpu-support | 21105 | 6222 | 5221 | 1854 |
-| popcorn | 16 | dpu-support-react-style | 21293 | 6164 | 5144 | 2006 |
+| popcorn | 16 | dpu-support-react-style | 21468 | 6253 | 5219 | 2181 |
 | many | 60 | baseline | 26486 | 6839 | 5471 | 1948 |
 | many | 60 | dpu-support | 26507 | 7062 | 5508 | 1859 |
-| many | 60 | dpu-support-react-style | 27971 | 7154 | 5479 | 3287 |
+| many | 60 | dpu-support-react-style | 28234 | 7260 | 5572 | 3550 |
 | grid | 100 | baseline | 30142 | 7367 | 5632 | 1941 |
 | grid | 100 | dpu-support | 30214 | 7680 | 5797 | 1852 |
-| grid | 100 | dpu-support-react-style | 32410 | 7851 | 5836 | 4012 |
+| grid | 100 | dpu-support-react-style | 32716 | 7966 | 5936 | 4318 |
 | big | 1 | baseline | 34736 | 9306 | 5998 | 1945 |
 | big | 1 | dpu-support | 34651 | 9333 | 6036 | 1856 |
-| big | 1 | dpu-support-react-style | 34405 | 9212 | 5963 | 1574 |
+| big | 1 | dpu-support-react-style | 34549 | 9310 | 6030 | 1718 |
 
 ### Projection: end stamp as a single newline instead of `<!--$p:id-->` (variants that emit stamps only; string substitution on the real output, NOT a working implementation, no behavior/timing measured)
 
@@ -119,7 +119,7 @@ Fixed = bytes added once a page has ≥1 boundary (init script/CE) = `one − ze
 |---|---|---|---|
 | baseline | 1319 | 106.8 | 14.6 |
 | dpu-support | 1190 | 108.4 | 17.4 |
-| dpu-support-react-style | 883 | 132.3 | 20.1 |
+| dpu-support-react-style | 1028 | 133.9 | 20.4 |
 
 ## Correctness, hydrate=off (stream + polyfill/native only, no client JS) — `/dpu`, 26 checks + isolated foreignObject page
 

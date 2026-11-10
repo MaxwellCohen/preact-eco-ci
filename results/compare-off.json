@@ -1,9 +1,9 @@
 {
   "baseline": {
     "net": {
-      "bytes": 64713,
-      "firstChunkMs": 204,
-      "totalMs": 2699
+      "bytes": 65361,
+      "firstChunkMs": 129,
+      "totalMs": 2622
     },
     "browsers": {
       "chromium": {
@@ -41,7 +41,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 2
+          "maxGap": 5
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -84,7 +84,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 275
+          "maxGap": 16
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -127,7 +127,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 34
+          "maxGap": 5
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -140,8 +140,8 @@
   "dpu-support": {
     "net": {
       "bytes": 64859,
-      "firstChunkMs": 204,
-      "totalMs": 2688
+      "firstChunkMs": 547,
+      "totalMs": 3010
     },
     "browsers": {
       "chromium": {
@@ -222,7 +222,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 11
+          "maxGap": 13
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -277,9 +277,9 @@
   },
   "dpu-support-react-style": {
     "net": {
-      "bytes": 67839,
-      "firstChunkMs": 198,
-      "totalMs": 2684
+      "bytes": 67982,
+      "firstChunkMs": 216,
+      "totalMs": 2703
     },
     "browsers": {
       "chromium": {
@@ -317,7 +317,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 2
+          "maxGap": 1
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -360,7 +360,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 56
+          "maxGap": 254
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,

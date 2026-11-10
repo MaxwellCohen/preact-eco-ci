@@ -1,9 +1,9 @@
 {
   "baseline": {
     "net": {
-      "bytes": 64713,
-      "firstChunkMs": 243,
-      "totalMs": 2702
+      "bytes": 65025,
+      "firstChunkMs": 163,
+      "totalMs": 2699
     },
     "browsers": {
       "chromium": {
@@ -41,7 +41,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 2
+          "maxGap": 13
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -84,7 +84,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 17
+          "maxGap": 14
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -127,7 +127,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 5
+          "maxGap": 7
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -139,9 +139,9 @@
   },
   "dpu-support": {
     "net": {
-      "bytes": 65275,
-      "firstChunkMs": 136,
-      "totalMs": 2627
+      "bytes": 64859,
+      "firstChunkMs": 261,
+      "totalMs": 2733
     },
     "browsers": {
       "chromium": {
@@ -222,7 +222,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 20
+          "maxGap": 16
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -265,7 +265,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 5
+          "maxGap": 12
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -277,9 +277,9 @@
   },
   "dpu-support-react-style": {
     "net": {
-      "bytes": 68359,
-      "firstChunkMs": 139,
-      "totalMs": 2644
+      "bytes": 68502,
+      "firstChunkMs": 159,
+      "totalMs": 2651
     },
     "browsers": {
       "chromium": {
@@ -317,7 +317,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 5
+          "maxGap": 9
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -360,7 +360,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 52
+          "maxGap": 28
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,
@@ -403,7 +403,7 @@
           "native": 0,
           "polyfill": 0,
           "errors": 0,
-          "maxGap": 19
+          "maxGap": 31
         },
         "leftoverTemplates": 0,
         "leftoverFallbacks": 0,

@@ -1,12 +1,12 @@
-# Variant comparison (2026-11-02)
+# Variant comparison (2026-11-10)
 
 Live `/dpu` page, 14s settle. Variants: baseline, dpu-support, dpu-support-react-style.
 
 | variant | bytes | first chunk | total |
 |---|---|---|---|
-| baseline | 64713 | 243ms | 2702ms |
-| dpu-support | 65275 | 136ms | 2627ms |
-| dpu-support-react-style | 68359 | 139ms | 2644ms |
+| baseline | 65025 | 163ms | 2699ms |
+| dpu-support | 64859 | 261ms | 2733ms |
+| dpu-support-react-style | 68502 | 159ms | 2651ms |
 
 ## Scenario pass/fail
 
@@ -45,12 +45,12 @@ Live `/dpu` page, 14s settle. Variants: baseline, dpu-support, dpu-support-react
 
 | variant | browser | $RC inits | $RC calls | native | polyfill | leftover templates | leftover fallbacks | preact-islands | max stall ms | page errors |
 |---|---|---|---|---|---|---|---|---|---|---|
-| baseline | chromium | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
-| baseline | firefox | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 0 |
-| baseline | webkit | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 |
+| baseline | chromium | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 13 | 0 |
+| baseline | firefox | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 14 | 0 |
+| baseline | webkit | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 |
 | dpu-support | chromium | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 0 |
-| dpu-support | firefox | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 |
-| dpu-support | webkit | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 |
-| dpu-support-react-style | chromium | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 |
-| dpu-support-react-style | firefox | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 52 | 0 |
-| dpu-support-react-style | webkit | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 19 | 0 |
+| dpu-support | firefox | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 16 | 0 |
+| dpu-support | webkit | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 |
+| dpu-support-react-style | chromium | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 0 |
+| dpu-support-react-style | firefox | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 28 | 0 |
+| dpu-support-react-style | webkit | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 31 | 0 |
